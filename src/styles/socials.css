@@ -1,0 +1,68 @@
+.socials {
+  background-color: var(--white);
+  display: grid;
+  grid-auto-flow: row;
+  place-items: center;
+  padding: 4em 1em;
+  gap: 2em;
+  border-radius: 100vmax;
+
+  position: fixed;
+  inset: 10em 0.75em auto auto;
+  margin-block: auto;
+
+  transform-origin: right;
+  scale: 0.3;
+  width: max-content;
+}
+
+.socials-link {
+  transition: all 100ms;
+  position: relative;
+}
+
+.hover-target {
+  position: absolute;
+  display: block;
+  inset: 0;
+}
+
+.socials-icon {
+  background: #000;
+}
+
+.instagram .socials-icon {
+  clip-path: url(#Instagram);
+}
+
+.instagram:hover .socials-icon {
+  background: radial-gradient(
+      179.06% 43.44% at -16.75% 7.2%,
+      #3771c8 0%,
+      #3771c8 12.8%,
+      rgba(102, 0, 255, 0) 100%
+    ),
+    radial-gradient(
+      92.18% 99.11% at 26.56% 107.7%,
+      #ffdd55 0%,
+      #ffdd55 10%,
+      #ff543e 50%,
+      #c837ab 100%
+    );
+}
+
+.facebook .socials-icon {
+  clip-path: url(#Facebook);
+}
+
+.facebook:hover .socials-icon {
+  background: linear-gradient(0deg, #0062e0 2.92%, #19afff 100%);
+}
+
+.linkedin .socials-icon {
+  clip-path: url(#LinkedIn);
+}
+
+.linkedin:hover .socials-icon {
+  background: #0a66c2;
+}
