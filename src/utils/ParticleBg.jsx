@@ -4,12 +4,11 @@ import { loadFull } from "tsparticles";
 
 const ParticleBg = () => {
   const particlesInit = useCallback(async engine => {
-    console.log(engine);
     await loadFull(engine);
   }, []);
 
   const particlesLoaded = useCallback(async container => {
-    await console.log(container);
+    await container;
   }, []);
   return (
     <Particles
@@ -23,7 +22,7 @@ const ParticleBg = () => {
         },
         fullScreen: {
           enable: true,
-          zIndex: 0,
+          zIndex: -1,
         },
         detectRetina: true,
         duration: 0,
@@ -42,11 +41,6 @@ const ParticleBg = () => {
             onHover: {
               enable: true,
               mode: "connect",
-              parallax: {
-                enable: false,
-                force: 60,
-                smooth: 10,
-              },
             },
             resize: {
               delay: 0.5,
@@ -59,7 +53,7 @@ const ParticleBg = () => {
               links: {
                 opacity: 0.5,
               },
-              radius: 80,
+              radius: 150,
             },
             push: {
               default: true,
@@ -84,46 +78,48 @@ const ParticleBg = () => {
             },
             enable: true,
           },
-          links: {
-            blink: false,
-            color: "#ffffff",
-            consent: false,
-            distance: 100,
-            enable: true,
-            opacity: 0.4,
-            width: 1,
-          },
           number: {
             density: {
               enable: true,
-              area: 1000,
+              area: 1500,
             },
-            limit: 300,
-            value: 100,
+            limit: 200,
           },
           shape: {
-            type: "circle",
+            type: ["circle", "square", "polygon"],
+            polygon: {
+              sides: 6,
+            },
           },
+
           opacity: {
             animation: {
-              enable: false,
+              enable: true,
               minimumValue: 0.1,
               speed: 1,
               sync: false,
             },
-            random: false,
-            value: 0.5,
+            random: true,
+            value: 0.3,
           },
           size: {
             animation: {
-              enable: false,
-              minimumValue: 0.1,
-              speed: 40,
+              minimumValue: 1,
+              speed: 10,
               sync: false,
+              size_min: 1,
             },
             random: true,
             value: 3,
           },
+          links: {
+            enable: false,
+            distance: 150,
+            color: "#f00",
+            opacity: 0.1,
+            width: 0.1,
+          },
+          zIndex: -1,
         },
       }}
     />

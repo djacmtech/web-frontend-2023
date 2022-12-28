@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "../pages/Home";
 import Events from "../pages/Events";
 import Team from "../pages/Team";
+import Contact from "../pages/Contact";
 import Socials from "./Socials";
 
 const Layout = () => {

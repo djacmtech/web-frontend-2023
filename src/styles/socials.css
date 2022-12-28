@@ -3,17 +3,23 @@
   display: grid;
   grid-auto-flow: row;
   place-items: center;
-  padding: 4em 1em;
   gap: 2em;
-  border-radius: 100vmax;
+
+  max-height: max-content;
 
   position: fixed;
-  inset: 10em 0.75em auto auto;
-  margin-block: auto;
+  inset: 0 0.75em 0 auto;
+  margin: auto 0;
+  padding: 4em 1em;
+
+  border-radius: 100vmax;
 
   transform-origin: right;
   scale: 0.3;
-  width: max-content;
+
+  transition: all 200ms;
+
+  z-index: 10;
 }
 
 .socials-link {
@@ -65,4 +71,16 @@
 
 .linkedin:hover .socials-icon {
   background: #0a66c2;
+}
+
+@media (width < 900px) {
+  .socials {
+    grid-auto-flow: column;
+    padding: 1em 2em;
+    inset: auto 0 1em;
+    margin: 0 auto;
+    transform-origin: bottom;
+    scale: 0.35;
+    min-width: 90vw;
+  }
 }
