@@ -1,25 +1,37 @@
 import React from "react";
-import { ReactComponent as instagram } from "../assets/instagram.svg";
-import { ReactComponent as facebook } from "../assets/facebook.svg";
-import { ReactComponent as linkedin } from "../assets/linkedin.svg";
+
+import instagramColor from "../assets/instagram.svg";
+import facebookColor from "../assets/facebook.svg";
+import linkedinColor from "../assets/linkedin.svg";
+import gmailColor from "../assets/gmail.svg";
+import instagramBW from "../assets/instagram_bw.svg";
+import facebookBW from "../assets/facebook_bw.svg";
+import linkedinBW from "../assets/linkedin_bw.svg";
+import gmailBW from "../assets/gmail_bw.svg";
+
 import "../styles/socials.css";
 
 const Socials = () => {
   const socials = [
     {
       name: "instagram",
-      icon: instagram,
+      icon: { color: instagramColor, bw: instagramBW },
       link: "https://www.instagram.com/djsanghvi_acm/",
     },
     {
       name: "facebook",
-      icon: facebook,
+      icon: { color: facebookColor, bw: facebookBW },
       link: "https://www.facebook.com/djscoeacm/",
     },
     {
       name: "linkedin",
-      icon: linkedin,
+      icon: { color: linkedinColor, bw: linkedinBW },
       link: "https://www.linkedin.com/company/dj-sanghvi-acm/",
+    },
+    {
+      name: "Gmail",
+      icon: { color: gmailColor, bw: gmailBW },
+      link: "mailto:coreacm@gmail.com",
     },
   ];
 
@@ -32,9 +44,11 @@ const Socials = () => {
           href={x.link}
           target='_blank'
           rel='noreferrer'>
-          <div className='hover-target'></div>
-          <div className='socials-icon'>
-            <x.icon />
+          <div
+            className='socials-icon'
+            style={{ backgroundImage: `url(${x.icon.bw})`, backgroundSize: "contain" }}>
+            <img src={x.icon.color} width='100%' />
+            {/* <img src={x.icon.bw} width='100%' /> */}
           </div>
         </a>
       ))}

@@ -5,7 +5,7 @@ const Header = () => {
   const subHead = "Dwarkadas Jivanlal Sanghvi College of Engineering";
 
   return (
-    <div>
+    <div className='header'>
       <ParticleBg />
       <div className='home-main'>
         <h1 className='heading main-heading '>{mainHead}</h1>

@@ -1,4 +1,3 @@
-import "https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js";
 import { useEffect } from "react";
 
 const About = () => {
@@ -17,51 +16,30 @@ const About = () => {
     },
   ];
 
+  const clamp = (x, a, b) => (x > b ? b : x < a ? a : x);
+  const ease = (x, a, b) => 3 * b * (1 - x) ** 2 * x + 3 * a * (1 - x) * x ** 2 + x ** 3;
   useEffect(() => {
-    document.querySelectorAll(".block-pair").forEach(pair => {
-      const [text, title] = pair.children;
+    const BlockPairs = document.querySelectorAll(".block-pair");
 
-      const topOffset = pair.offsetTop;
-      const pairHeight = pair.offsetHeight;
+    document.addEventListener("scroll", e => {
+      BlockPairs.forEach(pair => {
+        const scrollProgress = window.scrollY;
+        const windowHeight = window.innerHeight;
+        const topOffset = pair.offsetTop;
+        const pairHeight = pair.offsetHeight;
 
-      const BlockTimeline = new ScrollTimeline({
-        source: document.scrollingElement,
-        orientation: "block",
-        scrollOffsets: [new CSSUnitValue("50", "percent"), new CSSUnitValue("80", "percent")],
-
-        // [
-        //   new CSSUnitValue(topOffset + pairHeight - window.innerHeight + 300, "px"),
-        //   new CSSUnitValue(topOffset - 300, "px"),
-        // ],
+        const offset = 0;
+        const ratio =
+          (scrollProgress + windowHeight - (topOffset + offset)) / (pairHeight * 1.75 + offset);
+        pair.style.setProperty("--open-progress", ease(clamp(ratio, 0, 1), 0.1, 0.9));
       });
-
-      console.log(BlockTimeline);
-
-      title.animate(
-        {
-          translate: ["-50% 0", "0 0"],
-        },
-        {
-          timeline: BlockTimeline,
-          fill: "both",
-        }
-      );
-      text.animate(
-        {
-          translate: ["50% 0", "0 0"],
-        },
-        {
-          timeline: BlockTimeline,
-        }
-      );
-      console.log(title.getAnimations());
     });
   }, []);
 
   return (
     <div className='blocks'>
       {cards.map(x => (
-        <div className='block-pair' key={x.title}>
+        <div className='block-pair' key={x.title} aria-label={x.title}>
           <div className='block-text block'>{x.text}</div>
           <div className='block-title block'>{x.title}</div>
         </div>

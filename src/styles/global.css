@@ -50,7 +50,7 @@ body {
 }
 
 .content {
-  padding: 9em 1em 1em;
+  padding: 8em 1em 1em;
   flex-grow: 1;
 }
 
@@ -65,6 +65,10 @@ body {
   border-radius: 0.5rem;
 }
 
+.defs-only {
+  display: none;
+}
+
 .test {
   width: 100%;
   height: 100%;
@@ -72,6 +76,55 @@ body {
   display: grid;
   place-items: center;
   outline: lime 2px solid;
+}
+
+.info {
+  position: fixed;
+  inset: 1em 0 auto;
+  margin: 0 auto;
+
+  width: 10rem;
+  height: 5rem;
+
+  background-color: green;
+  color: white;
+
+  outline: 2px solid coral;
+
+  z-index: 11;
+  display: grid;
+  place-items: center;
+
+  font-size: 24pt;
+}
+
+.bb {
+  position: absolute;
+  outline: white 2px solid;
+  inset: auto 0;
+  z-index: 10;
+
+  transition: all 200ms ease;
+}
+
+.bb-1 {
+  outline-color: red;
+}
+.bb-2 {
+  outline-color: gold;
+}
+.bb-3 {
+  outline-color: violet;
+}
+.bb-4 {
+  outline-color: pink;
+}
+.bb-5 {
+  outline-color: cyan;
+}
+.bb-6 {
+  outline-color: lime;
+  position: fixed;
 }
 
 .heading {
