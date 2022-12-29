@@ -1,7 +1,7 @@
 :root {
   font-family: "DM Sans", Helvetica, Arial, sans-serif;
   font-size: 16px;
-  line-height: 24px;
+  line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
@@ -11,7 +11,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-  scroll-behavior: smooth;
 
   /* Colors */
   --white: #fff;
@@ -31,29 +30,30 @@
 }
 
 body {
-  height: 100%;
   background-color: var(--bg-main);
 }
 
-#root,
-.app {
-  height: 100%;
+.page {
+  position: relative;
+  display: grid;
+  max-height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  scroll-padding-top: 7em;
+  grid-auto-flow: row;
+  grid-auto-rows: 1fr;
+  padding: 7em 1em 0;
 }
 
-.app {
-  display: flex;
-  flex-direction: column;
-}
-
-.content {
-  padding: 8em 1em 1em;
-  flex-grow: 1;
+.page section {
+  scroll-snap-align: center;
+  height: calc(100vh - 7em);
 }
 
 ::-webkit-scrollbar {
   display: none;
-  -webkit-appearance: none;
-  width: 0;
+  width: 0.25rem;
   opacity: 0.5;
 }
 
@@ -68,7 +68,7 @@ body {
 
 .heading {
   font-family: "Julius Sans One", sans-serif;
-  line-height: 1.15em;
+  line-height: 1.2;
   font-weight: 900;
   color: transparent;
   text-transform: uppercase;
@@ -84,10 +84,4 @@ body {
   background-clip: text;
   background-size: cover;
   -webkit-background-clip: text;
-}
-
-@media (width < 600px) {
-  .content {
-    margin-bottom: 3rem;
-  }
 }

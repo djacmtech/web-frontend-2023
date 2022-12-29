@@ -1,12 +1,8 @@
-.homepage {
-  display: grid;
-}
-
 .main-header {
   font-size: 3rem;
   display: grid;
   gap: 0.5em;
-  margin: 2em 2em 5em;
+  margin: 2em;
   text-shadow: rgb(0 0 0 / 0.5) 0 -0.1em 0.2em;
   transition: all 200ms ease;
   height: max-content;
@@ -49,8 +45,8 @@
   display: grid;
   place-items: center;
   gap: 1em;
-  padding: 2em 2em;
   font-size: 1rem;
+  padding: 0.5em 0;
 
   margin: 0 10em;
 }
@@ -63,25 +59,14 @@
   isolation: isolate;
 
   --open-progress: 0;
-  --extension: 0;
-
-  --a: 0.25;
-  --b: 0.75;
-  --offset: 100;
-  --factor: 1.5;
-}
-
-.block-pair:last-child {
-  --factor: 0.9;
-  --offset: 0;
 }
 
 .block {
   flex: 1 0 0;
   display: grid;
-  padding: 1.5em;
+  padding: 1.25em 1.5em;
   border-radius: inherit;
-  transition: translate 1000ms ease-in-out;
+  transition: translate 500ms ease-in-out;
 }
 
 .block-title {
@@ -111,20 +96,32 @@
   width: 5rem;
   position: absolute;
   inset: 0 -2.5rem 0 auto;
-  opacity: var(--extension);
-  transition: opacity 100ms linear 300ms;
+  opacity: var(--open-progress);
+  transition: opacity 100ms linear 500ms;
   z-index: -1;
 }
 
+.blocks.open .block-pair {
+  --open-progress: 1;
+}
+
+.blocks.open .block {
+  transition: translate 1000ms ease-in-out;
+}
+
 @media (width > 1600px) {
-  .home-main {
+  .main-header {
     font-size: 3.5rem;
     margin: 2em 1em 6em;
+  }
+
+  .block-title {
+    padding: 4em 1.5em;
   }
 }
 
 @media (width < 900px) {
-  .home-main {
+  .main-header {
     font-size: 2.5rem;
     margin: 0 0 12em;
   }
@@ -143,7 +140,7 @@
     rotate: 0deg;
     translate: 0 0;
 
-    font-size: 5rem;
+    font-size: 4rem;
   }
 
   .block-pair {
@@ -151,12 +148,12 @@
     --factor: 1.2;
   }
 
-  .block {
+  .block-title {
     padding: 1em;
   }
 }
 @media (width<500px) {
-  .home-main {
+  .main-header {
     font-size: 2.5rem;
   }
 
@@ -175,7 +172,7 @@
     --factor: 0.5;
   }
 
-  .block {
+  .block-title {
     padding: 2em;
   }
 

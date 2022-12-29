@@ -6,6 +6,8 @@
   place-items: center;
   outline: lime 2px solid;
 
+  overflow: scroll;
+
   display: none;
 }
 
@@ -59,5 +61,4 @@
 }
 .bb-6 {
   outline-color: lime;
-  position: fixed;
 }
