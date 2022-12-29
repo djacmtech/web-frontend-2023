@@ -3,7 +3,7 @@ import "../styles/Contact.css";
 const Contact = () => {
   return (
     <>
-      <h1>GET IN TOUCH</h1>
+      <h1 className='contact-header'>GET IN TOUCH</h1>
 
       <div className='column'>
         <form action='#'>

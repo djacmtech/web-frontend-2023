@@ -30,10 +30,6 @@
   padding: 0;
 }
 
-html {
-  height: 100vh;
-}
-
 body {
   height: 100%;
   background-color: var(--bg-main);
@@ -55,8 +51,9 @@ body {
 }
 
 ::-webkit-scrollbar {
-  /* display: none; */
-  width: 0.25rem;
+  display: none;
+  -webkit-appearance: none;
+  width: 0;
   opacity: 0.5;
 }
 
@@ -67,64 +64,6 @@ body {
 
 .defs-only {
   display: none;
-}
-
-.test {
-  width: 100%;
-  height: 100%;
-  padding: 1em;
-  display: grid;
-  place-items: center;
-  outline: lime 2px solid;
-}
-
-.info {
-  position: fixed;
-  inset: 1em 0 auto;
-  margin: 0 auto;
-
-  width: 10rem;
-  height: 5rem;
-
-  background-color: green;
-  color: white;
-
-  outline: 2px solid coral;
-
-  z-index: 11;
-  display: grid;
-  place-items: center;
-
-  font-size: 24pt;
-}
-
-.bb {
-  position: absolute;
-  outline: white 2px solid;
-  inset: auto 0;
-  z-index: 10;
-
-  transition: all 200ms ease;
-}
-
-.bb-1 {
-  outline-color: red;
-}
-.bb-2 {
-  outline-color: gold;
-}
-.bb-3 {
-  outline-color: violet;
-}
-.bb-4 {
-  outline-color: pink;
-}
-.bb-5 {
-  outline-color: cyan;
-}
-.bb-6 {
-  outline-color: lime;
-  position: fixed;
 }
 
 .heading {
@@ -145,4 +84,10 @@ body {
   background-clip: text;
   background-size: cover;
   -webkit-background-clip: text;
+}
+
+@media (width < 600px) {
+  .content {
+    margin-bottom: 3rem;
+  }
 }

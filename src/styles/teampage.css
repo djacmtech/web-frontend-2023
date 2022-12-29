@@ -1,0 +1,10 @@
+.teampage {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.team-header {
+  font-size: 5rem;
+  grid-column: 2;
+}

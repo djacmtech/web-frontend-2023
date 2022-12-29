@@ -5,13 +5,13 @@ const Header = () => {
   const subHead = "Dwarkadas Jivanlal Sanghvi College of Engineering";
 
   return (
-    <div className='header'>
+    <section className='header'>
       <ParticleBg />
-      <div className='home-main'>
+      <div className='main-header'>
         <h1 className='heading main-heading '>{mainHead}</h1>
         <h2 className='heading sub-heading'>{subHead}</h2>
       </div>
-    </div>
+    </section>
   );
 };
 
