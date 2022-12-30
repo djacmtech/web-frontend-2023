@@ -1,8 +1,8 @@
 import React,{Fragment} from 'react'
-import './App.css'
+import '../styles/Contact.css'
 import {FaFacebook,FaInstagram,FaLinkedin,FaLocationArrow} from 'react-icons/fa'
 
-const App=()=>{
+const Contact=()=>{
 
      return(
   <Fragment>
@@ -99,4 +99,4 @@ const App=()=>{
     
   );
 }
-export default App;
+export default Contact;
