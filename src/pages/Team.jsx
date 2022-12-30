@@ -1,4 +1,5 @@
-import React from "react";
+// import Debug from "../utils/Debug";
+// import TextBlock from "../utils/TextBlock";
 import "../styles/teampage.css";
 
 const Team = () => {

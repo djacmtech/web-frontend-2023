@@ -1,33 +1,10 @@
-.main-header {
-  font-size: 3rem;
-  display: grid;
-  gap: 0.5em;
-  margin: 2em;
-  text-shadow: rgb(0 0 0 / 0.5) 0 -0.1em 0.2em;
-  transition: all 200ms ease;
-  height: max-content;
-}
-
-.main-heading {
-  font-size: 1.5em;
-  /* margin-bottom: 0.25em; */
-  width: 15ch;
-
-  height: min-content;
-}
-
-.sub-heading {
-  font-size: 0.75em;
-  width: 36ch;
-}
-
 .about {
   position: relative;
 }
 
 .about-header {
   color: var(--accent);
-  line-height: 8rem;
+  line-height: 1.2;
   font-size: 8rem;
   position: absolute;
   inset: 0 auto 0 0;
@@ -55,7 +32,7 @@
   display: grid;
   grid-auto-flow: row;
   grid-auto-columns: 1fr;
-  border-radius: 2.5rem;
+  border-radius: 2.5em;
   isolation: isolate;
 
   --open-progress: 0;
@@ -66,7 +43,7 @@
   display: grid;
   padding: 1.25em 1.5em;
   border-radius: inherit;
-  transition: translate 500ms ease-in-out;
+  transition: translate 200ms ease-in-out;
 }
 
 .block-title {
@@ -97,7 +74,7 @@
   position: absolute;
   inset: 0 -2.5rem 0 auto;
   opacity: var(--open-progress);
-  transition: opacity 100ms linear 500ms;
+  transition: opacity 10ms linear 0ms;
   z-index: -1;
 }
 
@@ -109,30 +86,32 @@
   transition: translate 1000ms ease-in-out;
 }
 
+.blocks.open .block-text::after {
+  transition: opacity 100ms linear 500ms;
+}
+
 @media (width > 1600px) {
   .main-header {
     font-size: 3.5rem;
-    margin: 2em 1em 6em;
+    padding: 2em 1em 6em;
   }
 
   .block-title {
-    padding: 4em 1.5em;
+    padding: 3.5em 1.5em;
   }
 }
 
 @media (width < 900px) {
   .main-header {
     font-size: 2.5rem;
-    margin: 0 0 12em;
   }
-  .main-heading,
+
+  .main-heading {
+    width: min-content;
+  }
+
   .sub-heading {
     width: fit-content;
-    height: min-content;
-  }
-  .blocks {
-    font-size: 0.5rem;
-    padding: 1em;
   }
 
   .about-header {
@@ -143,50 +122,71 @@
     font-size: 4rem;
   }
 
+  .blocks {
+    font-size: 0.5rem;
+    padding: 1em;
+    margin: 0;
+  }
+
   .block-pair {
-    --offset: 50;
-    --factor: 1.2;
+    border-radius: 4em;
   }
 
   .block-title {
-    padding: 1em;
+    font-size: 3em;
+    padding: 2.5em 2em;
+  }
+
+  .block-text {
+    font-size: 1.5em;
+    padding: 2.5em;
   }
 }
-@media (width<500px) {
+
+@media (width < 600px) {
   .main-header {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   .blocks {
     font-size: 0.5rem;
     padding: 1em;
+    margin: 0;
 
     overflow-x: hidden;
   }
 
   .block-pair {
     grid-auto-flow: column;
-    grid-auto-rows: 1fr;
-
-    --offset: -20;
-    --factor: 0.5;
-  }
-
-  .block-title {
-    padding: 2em;
+    border-radius: 1.5em;
   }
 
   .block-title {
     translate: calc(100% * (1 - var(--open-progress))) 0;
     grid-column: 1;
+    padding: 0.25em;
   }
 
   .block-text {
     translate: calc(-1 * 100% * (1 - var(--open-progress))) 0;
     grid-row: 2;
+    padding: 1.5em;
   }
 
   .block-text::after {
-    inset: auto 0 -2.5rem 0;
+    width: auto;
+    height: 3em;
+    inset: -1.5em 0 auto 0;
+  }
+}
+
+@media (width < 450px) {
+  .main-header {
+    font-size: 1.75rem;
+    padding: 2em 1em;
+  }
+
+  .blocks.open .block-text::after {
+    transition: opacity 100ms linear 900ms;
   }
 }

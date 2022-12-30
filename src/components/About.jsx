@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import "../styles/about.css";
 
 const About = () => {
   const cards = [
@@ -16,10 +17,8 @@ const About = () => {
     },
   ];
 
-  const clamp = (x, a, b) => (x >= b ? b : x <= a ? a : x);
-  const ease = (x, a, b) => 3 * b * (1 - x) ** 2 * x + 3 * a * (1 - x) * x ** 2 + x ** 3;
   useEffect(() => {
-    // const Page = document.querySelector(".page");
+    const Page = document.querySelector(".page");
     const AboutSection = document.querySelector(".about");
     const BlockPairs = document.querySelectorAll(".block-pair");
 
@@ -39,7 +38,7 @@ const About = () => {
           }
         });
       },
-      { threshold: 0.5 }
+      { root: Page, threshold: 0.5 }
     );
 
     observer.observe(AboutSection);

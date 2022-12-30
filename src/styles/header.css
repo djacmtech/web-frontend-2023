@@ -1,0 +1,21 @@
+.main-header {
+  font-size: 3rem;
+  display: grid;
+  gap: 0.5em;
+  padding: 2em;
+  text-shadow: rgb(0 0 0 / 0.5) 0 -0.1em 0.2em;
+  transition: all 200ms ease;
+  height: max-content;
+}
+
+.main-heading {
+  font-size: 1.5em;
+  width: 15ch;
+
+  height: min-content;
+}
+
+.sub-heading {
+  font-size: 0.75em;
+  width: 36ch;
+}

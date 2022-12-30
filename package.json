@@ -19,6 +19,7 @@
     "react-particles": "^2.7.1",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.6.1",
+    "react-slide-routes": "^3.0.3",
     "redux": "^4.2.0",
     "redux-thunk": "^2.4.2",
     "tsparticles": "^2.7.1",

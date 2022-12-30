@@ -1,13 +1,13 @@
+import { ThemeProvider } from "@mui/material";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./styles/global.css";
-import { applyMiddleware, createStore, compose } from "redux";
-import thunk from "redux-thunk";
 import { Provider } from "react-redux";
-import { reducers } from "./reducers";
-import { ThemeProvider } from "@mui/material";
-import { theme } from "./theme";
+import { applyMiddleware, compose, createStore } from "redux";
+import thunk from "redux-thunk";
 import Layout from "./components/Layout";
+import { reducers } from "./reducers";
+import "./styles/global.css";
+import { theme } from "./theme";
 
 const store = createStore(reducers, compose(applyMiddleware(thunk)));
 

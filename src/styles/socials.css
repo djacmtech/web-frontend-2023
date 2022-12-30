@@ -47,14 +47,14 @@
     font-size: 1.5rem;
     grid-auto-flow: column;
     padding: 0 1em;
-    inset: auto 0 0.5em;
+    inset: auto 0 1em;
     margin: 0 auto;
     transform-origin: bottom;
     max-width: min-content;
   }
 }
 
-@media (width<450px) {
+@media (width < 450px) {
   .socials {
     font-size: 1rem;
   }

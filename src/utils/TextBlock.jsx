@@ -1,6 +1,6 @@
 const TextBlock = () => {
   return (
-    <section className='test'>
+    <section className='text-block'>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex architecto sit optio blanditiis ab
       sequi voluptas cumque exercitationem libero delectus totam quod provident repellendus
       accusamus quae sapiente eius nulla aliquid assumenda nisi dolorem, vero facere commodi.

@@ -1,14 +1,13 @@
-.test {
-  width: 100%;
-  height: 100%;
-  padding: 1em;
+.text-block {
+  padding: 2em;
   display: grid;
   place-items: center;
-  outline: lime 2px solid;
+  border: lime 4px solid;
+  text-align: justify;
 
   overflow: scroll;
 
-  display: none;
+  /* display: none; */
 }
 
 .info {
@@ -49,6 +48,7 @@
 }
 .bb-2 {
   outline-color: gold;
+  inset: 10px;
 }
 .bb-3 {
   outline-color: violet;

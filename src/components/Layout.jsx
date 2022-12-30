@@ -1,23 +1,17 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Events from "../pages/Events";
-import Home from "../pages/Home";
-import Team from "../pages/Team";
+import { BrowserRouter as Router } from "react-router-dom";
 import Navbar from "./Navbar";
 import Socials from "./Socials";
+import Content from "./Content";
+import ParticleBg from "../utils/ParticleBg";
 
 const Layout = () => {
   return (
-    <>
-      <Router>
-        <Navbar />
-        <Socials />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/events' element={<Events />} />
-          <Route path='/team' element={<Team />} />
-        </Routes>
-      </Router>
-    </>
+    <Router>
+      <ParticleBg />
+      <Navbar />
+      <Socials />
+      <Content />
+    </Router>
   );
 };
 
