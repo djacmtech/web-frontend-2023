@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import "../styles/about.css";
+import "../../styles/about.css";
 
 const About = () => {
   const cards = [

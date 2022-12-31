@@ -16,6 +16,7 @@
   --white: #fff;
   --black: #000;
   --dark-grey: #202020;
+  --light-grey: #333333;
 
   --bg-main: #010101;
 
@@ -40,7 +41,7 @@ body {
 }
 
 .page {
-  --top-offset: 7em;
+  --top-offset: 7.5em;
 
   position: relative;
   display: grid;
@@ -50,6 +51,7 @@ body {
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
   scroll-padding-top: var(--top-offset);
+  scroll-margin-top: var(--top-offset);
   grid-auto-flow: row;
   grid-auto-rows: 1fr;
   padding: var(--top-offset) 1em 0;
@@ -57,7 +59,7 @@ body {
 
 .page section {
   scroll-snap-align: start;
-  height: calc(100vh - var(--top-offset) - 1em);
+  height: calc(100vh - var(--top-offset));
 }
 
 @supports (height: 100dvh) {
@@ -66,7 +68,7 @@ body {
   }
 
   .page section {
-    height: calc(100dvh - var(--top-offset) - 1em);
+    height: calc(100dvh - var(--top-offset));
   }
 }
 

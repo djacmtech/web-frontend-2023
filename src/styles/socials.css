@@ -34,11 +34,11 @@
   height: var(--size);
 }
 
-.socials-icon img {
+.socials-link img {
   opacity: 0;
   transition: opacity 200ms ease;
 }
-.socials-icon:hover img {
+.socials-link:is(:hover, :focus) img {
   opacity: 1;
 }
 

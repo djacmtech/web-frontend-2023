@@ -49,7 +49,7 @@ const ParticleBg = () => {
           },
           modes: {
             connect: {
-              distance: 150,
+              distance: 100,
               links: {
                 opacity: 0.5,
               },
@@ -57,7 +57,7 @@ const ParticleBg = () => {
             },
             push: {
               default: true,
-              quantity: 4,
+              quantity: 1,
             },
             remove: { quantity: 2 },
           },

@@ -1,0 +1,46 @@
+.team-complete {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 2rem;
+  place-items: center;
+}
+
+.team-complete .team-header {
+  grid-column: 2;
+  margin-top: 0.5em;
+}
+
+.team-select {
+  grid-column: 2;
+
+  display: grid;
+  gap: 0.5em;
+
+  border: none;
+}
+
+.team-select input {
+  display: none;
+}
+
+.team-select label {
+  font-size: 2rem;
+  opacity: 0.5;
+  transition: all 250ms ease;
+  cursor: pointer;
+}
+
+.team-select:not(:has(input:checked)) .team-input:first-child label {
+  opacity: 1;
+  color: var(--accent);
+}
+
+.team-input:has(input:checked) label {
+  opacity: 1;
+  color: var(--accent);
+}
+
+.team-members {
+  grid-row: -1 / 1;
+}
