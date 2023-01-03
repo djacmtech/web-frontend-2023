@@ -1,5 +1,5 @@
+import "https://rawcdn.githack.com/flackr/scroll-timeline/ca40d920073ab1c3775f6e2aa973c6ea747ae664/dist/scroll-timeline.js";
 import { useEffect } from "react";
-import "../../styles/about.css";
 
 const About = () => {
   const cards = [
@@ -18,34 +18,80 @@ const About = () => {
   ];
 
   useEffect(() => {
+    const BlockPairs = document.querySelectorAll(".block-pair");
+    const Blocks = document.querySelector(".blocks");
     const Page = document.querySelector(".page");
     const AboutSection = document.querySelector(".about");
-    const BlockPairs = document.querySelectorAll(".block-pair");
 
-    BlockPairs.forEach((pair, i) => {
-      pair.childNodes.forEach(x => {
-        x.style.setProperty("transition-delay", 150 * (i + 1) + "ms");
-      });
-    });
+    const mobile = window.matchMedia("(width < 900px)");
 
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.lastChild.classList.add("open");
-          } else {
-            entry.target.lastChild.classList.remove("open");
-          }
+    if (!mobile.matches) {
+      BlockPairs.forEach((pair, i) => {
+        const timeline = new ViewTimeline({
+          subject: pair,
+          axis: "vertical",
         });
-      },
-      { root: Page, threshold: 0.5 }
-    );
 
-    observer.observe(AboutSection);
+        const options = {
+          timeline,
+          timeRange: "cover -10% 50%",
+          fill: "both",
+          easing: "ease-in-out",
+        };
 
-    return () => {
-      observer.disconnect();
-    };
+        const [text, title] = pair.children;
+
+        pair.animate(
+          {
+            "--extension": [0, 1],
+          },
+          { ...options }
+        );
+
+        title.animate(
+          {
+            translate: ["-50% 0", "0 0"],
+
+            easing: "ease-in-out",
+          },
+          { ...options }
+        );
+        text.animate(
+          {
+            translate: ["50% 0", "0 0"],
+            easing: "ease-in-out",
+          },
+          { ...options }
+        );
+      });
+    } else {
+      const delay = +window.getComputedStyle(Blocks).getPropertyValue("--delay-factor");
+
+      BlockPairs.forEach((pair, i) => {
+        pair.childNodes.forEach(x => {
+          x.style.setProperty("transition-delay", delay * (i + 1) + "ms");
+        });
+      });
+
+      const observer = new IntersectionObserver(
+        entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.lastChild.classList.add("open");
+            } else {
+              entry.target.lastChild.classList.remove("open");
+            }
+          });
+        },
+        { root: Page, threshold: 0.5 }
+      );
+
+      observer.observe(AboutSection);
+
+      return () => {
+        observer.disconnect();
+      };
+    }
   }, []);
 
   return (

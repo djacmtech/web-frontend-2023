@@ -1,1 +1,47 @@
+.team-carousel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 2rem;
+}
 
+.team-header {
+  font-size: 5rem;
+  text-align: center;
+  max-width: fit-content;
+  margin: 0.5em auto;
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.carousel-container {
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0 1em;
+
+  transform-origin: center;
+
+  --rotation: 30deg;
+
+  rotate: var(--rotation);
+  translate: -30rem 20rem;
+}
+
+.carousel-img {
+  width: 10rem;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 50%;
+
+  rotate: calc(-1 * var(--rotation));
+  transition: all 200ms ease;
+  /* border: var(--white) 8px solid; */
+}

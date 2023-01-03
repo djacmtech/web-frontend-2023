@@ -1,14 +1,8 @@
 .team-complete {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr auto;
   grid-template-rows: auto 1fr;
-  gap: 2rem;
-  place-items: center;
-}
-
-.team-complete .team-header {
-  grid-column: 2;
-  margin-top: 0.5em;
+  /* place-items: center; */
 }
 
 .team-select {
@@ -17,7 +11,19 @@
   display: grid;
   gap: 0.5em;
 
-  border: none;
+  border: 2px solid var(--accent);
+  border-radius: 2rem;
+
+  padding: 0 2em 1em;
+  height: min-content;
+
+  align-self: center;
+  justify-self: center;
+}
+
+.team-label {
+  font-size: 2rem;
+  font-weight: 500;
 }
 
 .team-select input {
@@ -31,16 +37,17 @@
   cursor: pointer;
 }
 
-.team-select:not(:has(input:checked)) .team-input:first-child label {
-  opacity: 1;
-  color: var(--accent);
-}
-
+.team-select:not(:has(input:checked)) .team-input:first-of-type label,
 .team-input:has(input:checked) label {
+  font-weight: 500;
   opacity: 1;
   color: var(--accent);
 }
 
-.team-members {
-  grid-row: -1 / 1;
+.divider {
+  width: 90%;
+  height: 2px;
+  margin: 1em 0 0.5em;
+  background: var(--accent);
+  outline: none;
 }

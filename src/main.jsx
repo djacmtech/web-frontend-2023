@@ -6,7 +6,7 @@ import { applyMiddleware, compose, createStore } from "redux";
 import thunk from "redux-thunk";
 import Layout from "./components/Layout";
 import { reducers } from "./reducers";
-import "./styles/global.css";
+import "./styles/main.css";
 import { theme } from "./theme";
 
 const store = createStore(reducers, compose(applyMiddleware(thunk)));

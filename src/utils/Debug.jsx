@@ -1,5 +1,3 @@
-import "../styles/debug.css";
-
 const Debug = () => {
   return (
     <>

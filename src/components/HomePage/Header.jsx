@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import "../../styles/header.css";
 
 const Header = () => {
   const mainHead = "Association for Computing Machinery";

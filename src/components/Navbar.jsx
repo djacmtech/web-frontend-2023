@@ -1,7 +1,6 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
-import logo from "../assets/1280.png";
-import "../styles/navbar.css";
+import logo from "../assets/djacm_logo.png";
 
 const Navbar = () => {
   const routes = [
@@ -13,7 +12,7 @@ const Navbar = () => {
   return (
     <nav className='navbar'>
       <div className='nav-content'>
-        <Link to='/' className='img-link'>
+        <Link to='/' className='nav-logo-link'>
           <img src={logo} className='nav-logo' />
         </Link>
 

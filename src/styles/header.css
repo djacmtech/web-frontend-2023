@@ -1,8 +1,8 @@
 .main-header {
-  font-size: 3rem;
+  font-size: 7dvh;
   display: grid;
   gap: 0.5em;
-  padding: 2em;
+  padding: 2em 0 0 2em;
   text-shadow: rgb(0 0 0 / 0.5) 0 -0.1em 0.2em;
   transition: all 200ms ease;
   height: max-content;
@@ -11,11 +11,29 @@
 .main-heading {
   font-size: 1.5em;
   width: 15ch;
-
-  height: min-content;
 }
 
 .sub-heading {
   font-size: 0.75em;
-  width: 36ch;
+  width: 35ch;
+}
+
+@media (width < 1000px) {
+  .main-header {
+    font-size: 2.5rem;
+  }
+
+  .main-heading {
+    width: min-content;
+  }
+  .sub-heading {
+    width: auto;
+  }
+}
+
+@media (width < 640px) {
+  .main-header {
+    font-size: 3.2dvh;
+    padding: 2em 1em 0;
+  }
 }

@@ -12,7 +12,7 @@
   position: fixed;
   inset: 0 0.75em 0 auto;
   margin: auto 0;
-  padding: 1em 0;
+  padding: 1em 0.25em;
 
   border-radius: 100vmax;
 
@@ -29,7 +29,7 @@
 }
 
 .socials-icon {
-  --size: 2em;
+  --size: 2.25em;
   width: var(--size);
   height: var(--size);
 }

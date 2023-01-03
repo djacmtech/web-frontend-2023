@@ -1,38 +1,50 @@
 .about {
   position: relative;
+  display: grid;
+  grid-template-rows: 1fr;
 }
 
 .about-header {
   color: var(--accent);
-  line-height: 1.2;
+  line-height: 1.5;
   font-size: 8rem;
+  text-align: center;
+
   position: absolute;
   inset: 0 auto 0 0;
   margin: auto 0;
 
   transform-origin: center;
   rotate: 90deg;
-  translate: -40% 0;
+  translate: -35% 0;
 
   max-height: fit-content;
-  text-align: center;
 }
 
 .blocks {
-  display: grid;
-  place-items: center;
-  gap: 1em;
   font-size: 1rem;
-  padding: 0.5em 0;
 
-  margin: 0 10em;
+  display: grid;
+  gap: 1em;
+
+  padding: 1em 0;
+  margin: 0 5vw 0 16vw;
+
+  --block-border-radius: 3rem;
+  --title-size: 2em;
+  --text-size: 1.5em;
+
+  --extension: 0;
+  --delay-factor: 150;
+
+  height: 100%;
 }
 
 .block-pair {
   display: grid;
-  grid-auto-flow: row;
+  grid-auto-flow: column;
   grid-auto-columns: 1fr;
-  border-radius: 2.5em;
+  border-radius: var(--block-border-radius);
   isolation: isolate;
 
   --open-progress: 0;
@@ -41,7 +53,6 @@
 .block {
   flex: 1 0 0;
   display: grid;
-  padding: 1.25em 1.5em;
   border-radius: inherit;
   transition: translate 200ms ease-in-out;
 }
@@ -49,10 +60,10 @@
 .block-title {
   background-color: var(--accent);
   color: var(--bg-main);
-  font-size: 2em;
-  font-weight: bold;
+  font-size: var(--title-size);
+  font-weight: 900;
   place-items: center;
-  grid-column: 2;
+  padding: 0;
 
   translate: calc(-1 * 50% * (1 - var(--open-progress))) 0;
 
@@ -62,7 +73,8 @@
 .block-text {
   background-color: var(--dark-grey);
   color: var(--accent);
-  font-size: 1.25em;
+  font-size: var(--text-size);
+  padding: 1.5em;
 
   translate: calc(50% * (1 - var(--open-progress))) 0;
 }
@@ -70,10 +82,10 @@
 .block-text::after {
   background-color: var(--dark-grey);
   content: "";
-  width: 5rem;
+  width: calc(2 * var(--block-border-radius));
   position: absolute;
-  inset: 0 -2.5rem 0 auto;
-  opacity: var(--open-progress);
+  inset: 0 calc(-1 * var(--block-border-radius)) 0 auto;
+  opacity: var(--extension);
   transition: opacity 10ms linear 0ms;
   z-index: -1;
 }
@@ -83,35 +95,23 @@
 }
 
 .blocks.open .block {
-  transition: translate 1000ms ease-in-out;
+  transition: all 1000ms ease-in-out;
 }
 
 .blocks.open .block-text::after {
-  transition: opacity 100ms linear 500ms;
+  transition: opacity 100ms linear 800ms;
 }
 
-@media (width > 1600px) {
-  .main-header {
-    font-size: 3.5rem;
-    padding: 2em 1em 6em;
-  }
-
-  .block-title {
-    padding: 3.5em 1.5em;
+@media (width < 1600px) {
+  .blocks {
+    --title-size: 2em;
+    --text-size: 1.2em;
   }
 }
 
-@media (width < 900px) {
-  .main-header {
-    font-size: 2.5rem;
-  }
-
-  .main-heading {
-    width: min-content;
-  }
-
-  .sub-heading {
-    width: fit-content;
+@media (width < 1000px) {
+  .about {
+    grid-template-rows: auto 1fr;
   }
 
   .about-header {
@@ -123,67 +123,51 @@
   }
 
   .blocks {
-    font-size: 0.5rem;
-    padding: 1em;
-    margin: 0;
-  }
+    --block-border-radius: 1.5rem;
+    margin: 0 3rem;
 
-  .block-pair {
-    border-radius: 4em;
-  }
-
-  .block-title {
-    font-size: 3em;
-    padding: 2.5em 2em;
-  }
-
-  .block-text {
-    font-size: 1.5em;
-    padding: 2.5em;
+    --title-size: 2em;
+    --text-size: 1em;
   }
 }
 
-@media (width < 600px) {
-  .main-header {
-    font-size: 2rem;
-  }
-
+@media (width < 640px) {
   .blocks {
-    font-size: 0.5rem;
     padding: 1em;
     margin: 0;
-
-    overflow-x: hidden;
+    gap: 0.5em;
+    --block-border-radius: 0.75rem;
+    --title-size: 1.5em;
+    --text-size: 1em;
   }
 
   .block-pair {
-    grid-auto-flow: column;
-    border-radius: 1.5em;
+    grid-auto-flow: row;
   }
 
   .block-title {
-    translate: calc(100% * (1 - var(--open-progress))) 0;
+    translate: calc(110% * (1 - var(--open-progress))) 0;
+
+    /* translate: 0 0; */
+
     grid-column: 1;
-    padding: 0.25em;
   }
 
   .block-text {
-    translate: calc(-1 * 100% * (1 - var(--open-progress))) 0;
+    translate: calc(-1 * 110% * (1 - var(--open-progress))) 0;
+
+    /* translate: 0 0;
+    transform-origin: top;
+    scale: 1 calc(100% * var(--open-progress)); */
+
     grid-row: 2;
-    padding: 1.5em;
+    padding: 1em;
   }
 
   .block-text::after {
     width: auto;
-    height: 3em;
-    inset: -1.5em 0 auto 0;
-  }
-}
-
-@media (width < 450px) {
-  .main-header {
-    font-size: 1.75rem;
-    padding: 2em 1em;
+    height: calc(2 * var(--block-border-radius));
+    inset: calc(-1 * var(--block-border-radius)) 0 auto 0;
   }
 
   .blocks.open .block-text::after {

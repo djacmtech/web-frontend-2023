@@ -24,7 +24,7 @@
 
   /* Media Breakpoints */
 
-  --phone: 450px;
+  --phone: 640px;
   --tablet: 900px;
   --laptop: 1600px;
 }
@@ -40,36 +40,25 @@ body {
   background-color: var(--bg-main);
 }
 
-.page {
-  --top-offset: 7.5em;
-
-  position: relative;
+#root {
   display: grid;
-  gap: 4em;
-  max-height: 100vh;
+  grid-template-rows: auto 1fr;
+}
+
+.page {
+  --page-offset: 7rem;
+
+  display: grid;
+  /* grid-auto-rows: auto; */
+  position: relative;
+  gap: 5em;
   overflow-y: scroll;
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
-  scroll-padding-top: var(--top-offset);
-  scroll-margin-top: var(--top-offset);
-  grid-auto-flow: row;
-  grid-auto-rows: 1fr;
-  padding: var(--top-offset) 1em 0;
+  max-height: calc(100dvh - var(--page-offset));
 }
 
 .page section {
-  scroll-snap-align: start;
-  height: calc(100vh - var(--top-offset));
-}
-
-@supports (height: 100dvh) {
-  .page {
-    max-height: 100dvh;
-  }
-
-  .page section {
-    height: calc(100dvh - var(--top-offset));
-  }
+  margin: 0 4rem 0 0;
+  min-block-size: calc(100dvh - var(--page-offset));
 }
 
 ::-webkit-scrollbar {
@@ -109,6 +98,13 @@ body {
 
 @media (width < 900px) {
   .page {
-    --top-offset: calc(7em / 1.5);
+    --page-offset: calc(7em / 1.5);
+    scroll-snap-type: y mandatory;
+    gap: 10rem;
+  }
+
+  .page section {
+    margin: 0;
+    scroll-snap-align: start;
   }
 }

@@ -3,7 +3,6 @@ import SlideRoutes from "react-slide-routes";
 import Events from "../pages/Events";
 import Home from "../pages/Home";
 import Team from "../pages/Team";
-import "../styles/content.css";
 
 const Content = () => {
   return (

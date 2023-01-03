@@ -1,0 +1,29 @@
+.faculty {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* gap: 1em; */
+  padding: 2em 0 0 0;
+}
+
+.faculty-member {
+  display: grid;
+  place-items: center;
+  grid-template-rows: 10rem auto auto auto;
+
+  --name-size: 1.25rem;
+}
+
+.faculty-img {
+  height: 100%;
+  object-fit: contain;
+  border-radius: 100vw;
+}
+
+.faculty-name {
+  font-size: var(--name-size);
+}
+
+.faculty-position {
+  margin-top: 0.5em;
+  font-size: calc(var(--name-size) * 0.75);
+}

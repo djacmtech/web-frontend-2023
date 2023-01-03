@@ -5,7 +5,7 @@
   border: lime 4px solid;
   text-align: justify;
 
-  overflow: scroll;
+  /* overflow: scroll; */
 
   /* display: none; */
 }
@@ -61,4 +61,12 @@
 }
 .bb-6 {
   outline-color: lime;
+}
+
+.page {
+  /* box-shadow: red 0 0 0 1px inset; */
+}
+
+.page section {
+  /* box-shadow: gold 0 0 0 1px inset; */
 }

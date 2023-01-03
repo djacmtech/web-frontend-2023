@@ -9,8 +9,6 @@ import facebookBW from "../assets/facebook_bw.svg";
 import linkedinBW from "../assets/linkedin_bw.svg";
 import gmailBW from "../assets/gmail_bw.svg";
 
-import "../styles/socials.css";
-
 const Socials = () => {
   const socials = [
     {

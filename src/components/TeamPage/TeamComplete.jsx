@@ -1,5 +1,6 @@
 import { useState } from "react";
-import "../../styles/teamcomplete.css";
+import Faculty from "./Faculty";
+import TeamMembers from "./TeamMembers";
 
 const TeamComplete = () => {
   const [Team, setTeam] = useState("2022");
@@ -10,8 +11,9 @@ const TeamComplete = () => {
 
   return (
     <section className='team-complete'>
-      <h1 className='team-header heading'>Team</h1>
+      <Faculty />
       <fieldset className='team-select'>
+        <legend className='team-label'>Team</legend>
         {new Array(5).fill(0).map((_, i) => (
           <span key={i} className='team-input'>
             <input
@@ -29,14 +31,6 @@ const TeamComplete = () => {
       <TeamMembers Year={Team} />
     </section>
   );
-};
-
-const TeamMembers = ({ Year }) => {
-  return <div className='team-members'>{Year}</div>;
-};
-
-const TeamMember = ({ name, img, socials }) => {
-  return <div>TeamMember</div>;
 };
 
 export default TeamComplete;
