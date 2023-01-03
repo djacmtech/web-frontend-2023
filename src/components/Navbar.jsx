@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
-import logo from "../assets/djacm_logo.png";
+import logo from "../assets/logo/djacm_logo.png";
 
 const Navbar = () => {
   const routes = [

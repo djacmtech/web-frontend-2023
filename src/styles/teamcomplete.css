@@ -14,10 +14,12 @@
   border: 2px solid var(--accent);
   border-radius: 2rem;
 
+  margin: 3em 0 0;
+
   padding: 0 2em 1em;
   height: min-content;
 
-  align-self: center;
+  align-self: start;
   justify-self: center;
 }
 

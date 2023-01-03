@@ -1,13 +1,13 @@
 import React from "react";
 
-import instagramColor from "../assets/instagram.svg";
-import facebookColor from "../assets/facebook.svg";
-import linkedinColor from "../assets/linkedin.svg";
-import gmailColor from "../assets/gmail.svg";
-import instagramBW from "../assets/instagram_bw.svg";
-import facebookBW from "../assets/facebook_bw.svg";
-import linkedinBW from "../assets/linkedin_bw.svg";
-import gmailBW from "../assets/gmail_bw.svg";
+import instagramColor from "../assets/icons/instagram.svg";
+import facebookColor from "../assets/icons/facebook.svg";
+import linkedinColor from "../assets/icons/linkedin.svg";
+import gmailColor from "../assets/icons/gmail.svg";
+import instagramBW from "../assets/icons/instagram_bw.svg";
+import facebookBW from "../assets/icons/facebook_bw.svg";
+import linkedinBW from "../assets/icons/linkedin_bw.svg";
+import gmailBW from "../assets/icons/gmail_bw.svg";
 
 const Socials = () => {
   const socials = [

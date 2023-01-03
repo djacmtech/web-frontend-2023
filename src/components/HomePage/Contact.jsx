@@ -1,8 +1,8 @@
 import React from "react";
-import instagram from "../../assets/instagram.svg";
-import facebook from "../../assets/facebook.svg";
-import linkedin from "../../assets/linkedin.svg";
-import direction from "../../assets/direction_icon.svg";
+import instagram from "../../assets/icons/instagram.svg";
+import facebook from "../../assets/icons/facebook.svg";
+import linkedin from "../../assets/icons/linkedin.svg";
+import direction from "../../assets/icons/direction_icon.svg";
 
 const Contact = () => {
   return (

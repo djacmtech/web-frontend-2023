@@ -26,16 +26,18 @@
   justify-content: center;
   gap: 0 1em;
 
+  width: 120%;
+
   transform-origin: center;
 
-  --rotation: 30deg;
+  --rotation: 20deg;
 
   rotate: var(--rotation);
-  translate: -30rem 20rem;
+  translate: -20rem 20rem;
 }
 
 .carousel-img {
-  width: 10rem;
+  width: 12rem;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   object-position: top;
