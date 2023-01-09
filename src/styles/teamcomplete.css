@@ -41,7 +41,6 @@
 
 .team-select:not(:has(input:checked)) .team-input:first-of-type label,
 .team-input:has(input:checked) label {
-  font-weight: 500;
   opacity: 1;
   color: var(--accent);
 }
