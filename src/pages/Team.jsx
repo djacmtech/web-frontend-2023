@@ -7,7 +7,7 @@ const Team = () => {
   return (
     <div className='teampage page'>
       <TeamCarousel />
-      <TeamComplete />
+      {/* <TeamComplete /> */}
     </div>
   );
 };

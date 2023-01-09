@@ -1,18 +1,7 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
+import useData from "../../hooks/useData";
 
 const Faculty = () => {
-  const [Faculty, setFaculty] = useState([]);
-
-  const getFaculty = async () => {
-    const res = await axios.get("https://djacmdev.pythonanywhere.com/api/faculty/");
-    const data = res.data;
-    setFaculty(data);
-  };
-
-  useEffect(() => {
-    getFaculty();
-  }, []);
+  const Faculty = useData("https://djacmdev.pythonanywhere.com/api/faculty/");
 
   return (
     <div className='faculty'>
