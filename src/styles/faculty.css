@@ -2,7 +2,9 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   /* gap: 1em; */
-  padding: 2em 0 0 0;
+  grid-area: 2 / 2;
+
+  height: min-content;
 }
 
 .faculty-member {

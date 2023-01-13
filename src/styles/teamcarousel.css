@@ -16,7 +16,7 @@
 
 .carousel-container {
   grid-column: 1 / -1;
-  grid-row: 2;
+  grid-row: 1 / -1;
   overflow: auto hidden;
 }
 
@@ -24,38 +24,64 @@
   --rotation: 25deg;
 
   rotate: var(--rotation);
-  translate: -25rem 0rem;
+  translate: -25rem 20rem;
 }
 
 .carousel-row {
   display: flex;
   justify-content: center;
   gap: 0 1em;
+  margin: 1em 0;
 
-  translate: -50% 0;
+  translate: 0 0;
 
   transform-origin: center;
-  transition: all 20000ms linear;
+  animation: name 30s linear infinite;
 }
 
-.carousel:hover .carousel-row {
-  translate: 100% 0;
+.carousel-row-1 {
+  translate: -30% 0;
+  animation-name: carousel-row-1;
+}
+
+.carousel-row-2 {
+  translate: 53.45% 0;
+
+  animation-name: carousel-row-2;
 }
 
 .carousel-item {
   height: 12rem;
   aspect-ratio: 1 / 1;
-  border: 1px solid var(--accent);
   border-radius: 50%;
+  rotate: calc(-1 * var(--rotation));
+
+  clip-path: circle(6rem);
 }
 
 .carousel-img {
   width: 100%;
   height: 100%;
-  border-radius: 50%;
   object-fit: cover;
   object-position: top;
+}
 
-  rotate: calc(-1 * var(--rotation));
-  /* border: var(--white) 8px solid; */
+.team-member-post {
+  text-align: center;
+  position: absolute;
+  inset: 70% 0 0;
+  padding: 0.5em 0 0;
+  font-size: 1rem;
+  background-color: rgba(0 0 0 / 0.4);
+}
+
+@keyframes carousel-row-1 {
+  to {
+    translate: 59.65% 0;
+  }
+}
+@keyframes carousel-row-2 {
+  to {
+    translate: -25% 0;
+  }
 }

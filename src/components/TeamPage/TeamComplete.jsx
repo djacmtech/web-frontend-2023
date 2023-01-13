@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Faculty from "./Faculty";
 import TeamMembers from "./TeamMembers";
 
 const TeamComplete = () => {
@@ -11,7 +10,6 @@ const TeamComplete = () => {
 
   return (
     <section className='team-complete'>
-      <Faculty />
       <fieldset className='team-select'>
         <legend className='team-label'>Team</legend>
         {new Array(5).fill(0).map((_, i) => (

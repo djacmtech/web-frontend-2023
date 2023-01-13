@@ -44,11 +44,3 @@
   opacity: 1;
   color: var(--accent);
 }
-
-.divider {
-  width: 90%;
-  height: 2px;
-  margin: 1em 0 0.5em;
-  background: var(--accent);
-  outline: none;
-}
