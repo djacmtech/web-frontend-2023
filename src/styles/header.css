@@ -1,5 +1,5 @@
 .main-header {
-  font-size: 7dvh;
+  font-size: clamp(1rem, 7dvh, 5rem);
   display: grid;
   gap: 0.5em;
   padding: 2em 0 0 2em;
@@ -33,7 +33,7 @@
 
 @media (width < 640px) {
   .main-header {
-    font-size: 3.2dvh;
+    font-size: clamp(2rem, 3.2dvh, 3rem);
     padding: 2em 1em 0;
   }
 }
