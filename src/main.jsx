@@ -12,9 +12,9 @@ import { theme } from "./theme";
 const store = createStore(reducers, compose(applyMiddleware(thunk)));
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <>
+  <React.StrictMode>
     <ThemeProvider theme={theme}>
       <Layout />
     </ThemeProvider>
-  </>
+  </React.StrictMode>
 );

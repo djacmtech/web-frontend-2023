@@ -49,10 +49,9 @@ body {
   --page-offset: 7rem;
 
   display: grid;
-  /* grid-auto-rows: auto; */
   position: relative;
-  gap: 5em;
-  overflow-y: scroll;
+  overflow: auto;
+  gap: 10em;
   max-height: calc(100dvh - var(--page-offset));
 }
 

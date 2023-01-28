@@ -4,6 +4,7 @@
 @import "header.css" layer(home);
 @import "about.css" layer(home);
 @import "contact.css" layer(home);
+@import "events.css" layer(events);
 @import "teamcarousel.css" layer(team);
 @import "teamcomplete.css" layer(team);
 @import "teammembers.css" layer(team);
