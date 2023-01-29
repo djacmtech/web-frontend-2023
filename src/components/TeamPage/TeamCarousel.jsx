@@ -27,23 +27,26 @@ const TeamCarousel = () => {
         <div className='carousel'>
           <div className='carousel-row carousel-row-1'>
             {TeamRow1.map((x, i) => (
-              <div className='carousel-item' key={x.name + i}>
-                <img src={x.pic} alt={x.name} className='carousel-img' />
-                <h3 className='team-member-post'>{x.post}</h3>
-              </div>
+              <CarouselItem x={x} key={x.name + i} />
             ))}
           </div>
           <div className='carousel-row carousel-row-2'>
             {Teamrow2.map((x, i) => (
-              <div className='carousel-item' key={x.name + i}>
-                <img src={x.pic} alt={x.name} className='carousel-img' />
-                <h3 className='team-member-post'>{x.post}</h3>
-              </div>
+              <CarouselItem x={x} key={x.name + i} />
             ))}
           </div>
         </div>
       </div>
     </section>
+  );
+};
+
+export const CarouselItem = ({ x }) => {
+  return (
+    <div className={`carousel-item ${x.name.toLowerCase().split(" ").join("-")}`}>
+      <img src={x.pic} alt={x.name} className='carousel-img' />
+      <h3 className='team-member-post'>{x.post}</h3>
+    </div>
   );
 };
 

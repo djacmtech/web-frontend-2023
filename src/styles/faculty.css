@@ -1,31 +1,51 @@
 .faculty {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  /* gap: 1em; */
   grid-area: 2 / 2;
-
+  gap: 1em;
   height: min-content;
 }
 
 .faculty-member {
   display: grid;
   place-items: center;
-  grid-template-rows: 10rem auto auto auto;
+  text-align: center;
 
-  --name-size: 1.25rem;
+  font-size: 1.25rem;
 }
 
 .faculty-img {
-  height: 100%;
+  height: 8em;
   object-fit: contain;
   border-radius: 100vw;
 }
 
 .faculty-name {
-  font-size: var(--name-size);
+  font-size: 1em;
 }
 
 .faculty-position {
   margin-top: 0.5em;
-  font-size: calc(var(--name-size) * 0.75);
+  font-size: 0.75em;
+}
+
+@media (width < 900px) {
+  .faculty {
+    grid-column: 1;
+    margin: 0 1em;
+  }
+}
+
+@media (width < 640px) {
+  .faculty-member {
+    font-size: 0.75rem;
+  }
+
+  .faculty-name {
+    width: 12ch;
+  }
+
+  .faculty-img {
+    height: 10em;
+  }
 }

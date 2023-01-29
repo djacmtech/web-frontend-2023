@@ -25,73 +25,70 @@ const About = () => {
 
     const mobile = window.matchMedia("(width < 900px)");
 
-    if (!mobile.matches) {
-      BlockPairs.forEach((pair, i) => {
-        const timeline = new ViewTimeline({
-          subject: pair,
-          axis: "vertical",
-        });
-
-        const options = {
-          timeline,
-          timeRange: "cover -10% 50%",
-          fill: "both",
-          easing: "ease-in-out",
-        };
-
-        const [text, title] = pair.children;
-
-        pair.animate(
-          {
-            "--extension": [0, 1],
-          },
-          { ...options }
-        );
-
-        title.animate(
-          {
-            translate: ["-50% 0", "0 0"],
-
-            easing: "ease-in-out",
-          },
-          { ...options }
-        );
-        text.animate(
-          {
-            translate: ["50% 0", "0 0"],
-            easing: "ease-in-out",
-          },
-          { ...options }
-        );
-      });
-    } else {
-      const delay = +window.getComputedStyle(Blocks).getPropertyValue("--delay-factor");
-
-      BlockPairs.forEach((pair, i) => {
-        pair.childNodes.forEach(x => {
-          x.style.setProperty("transition-delay", delay * (i + 1) + "ms");
-        });
+    // if (!mobile.matches) {
+    BlockPairs.forEach((pair, i) => {
+      const timeline = new ViewTimeline({
+        subject: pair,
+        axis: "vertical",
       });
 
-      const observer = new IntersectionObserver(
-        entries => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.lastChild.classList.add("open");
-            } else {
-              entry.target.lastChild.classList.remove("open");
-            }
-          });
+      const options = {
+        timeline,
+        timeRange: mobile.matches ? "cover -10% 30%" : "cover -10% 50%",
+        fill: "both",
+        easing: "ease-in-out",
+      };
+
+      const [text, title] = pair.children;
+
+      pair.animate(
+        {
+          "--extension": [0, 1],
         },
-        { root: Page, threshold: 0.5 }
+        { ...options }
       );
 
-      observer.observe(AboutSection);
+      title.animate(
+        {
+          translate: ["-50% 0", "0 0"],
+        },
+        { ...options }
+      );
+      text.animate(
+        {
+          translate: ["50% 0", "0 0"],
+        },
+        { ...options }
+      );
+    });
+    // } else {
+    //   const delay = +window.getComputedStyle(Blocks).getPropertyValue("--delay-factor");
 
-      return () => {
-        observer.disconnect();
-      };
-    }
+    //   BlockPairs.forEach((pair, i) => {
+    //     pair.childNodes.forEach(x => {
+    //       x.style.setProperty("transition-delay", delay * (i + 1) + "ms");
+    //     });
+    //   });
+
+    //   const observer = new IntersectionObserver(
+    //     entries => {
+    //       entries.forEach(entry => {
+    //         if (entry.isIntersecting) {
+    //           entry.target.lastChild.classList.add("open");
+    //         } else {
+    //           entry.target.lastChild.classList.remove("open");
+    //         }
+    //       });
+    //     },
+    //     { root: Page, threshold: 0.5 }
+    //   );
+
+    //   observer.observe(AboutSection);
+
+    //   return () => {
+    //     observer.disconnect();
+    //   };
+    // }
   }, []);
 
   return (

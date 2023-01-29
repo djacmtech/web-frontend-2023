@@ -6,7 +6,7 @@
 }
 
 .team-header {
-  font-size: 5rem;
+  font-size: clamp(3rem, 10dvh, 5rem);
   text-align: center;
   max-width: fit-content;
   margin: 0.5em auto;
@@ -33,21 +33,20 @@
   gap: 0 1em;
   margin: 1em 0;
 
-  translate: 0 0;
+  translate: var(--from-offset) 0;
 
   transform-origin: center;
-  animation: name 30s linear infinite;
+  animation: carousel-row 30s linear infinite;
 }
 
 .carousel-row-1 {
-  translate: -30% 0;
-  animation-name: carousel-row-1;
+  --from-offset: -30%;
+  --to-offset: 59.65%;
 }
 
 .carousel-row-2 {
-  translate: 53.45% 0;
-
-  animation-name: carousel-row-2;
+  --from-offset: 53.45%;
+  --to-offset: -25%;
 }
 
 .carousel-item {
@@ -76,13 +75,51 @@
   background-color: rgba(0 0 0 / 0.6);
 }
 
-@keyframes carousel-row-1 {
+@keyframes carousel-row {
   to {
-    translate: 59.65% 0;
+    translate: var(--to-offset) 0;
   }
 }
-@keyframes carousel-row-2 {
-  to {
-    translate: -25% 0;
+
+@media (width < 900px) {
+  .team-carousel {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr;
+    gap: 1em;
+  }
+  .team-header {
+    grid-column: 1;
+    margin: 0.25em auto;
+  }
+
+  .carousel-container {
+    grid-row: 3;
+  }
+
+  .carousel {
+    --rotation: 25deg;
+    translate: 0 8rem;
+  }
+
+  .carousel-row {
+    animation-duration: 20s;
+  }
+
+  /* .carousel-row-1 {
+    --from-offset: -60%;
+    --to-offset: 170.5%;
+  }
+  .carousel-row-2 {
+    --from-offset: 155%;
+    --to-offset: -46.5%;
+  } */
+
+  .carousel-item {
+    height: 8rem;
+    clip-path: circle(4rem);
+  }
+
+  .team-member-post {
+    font-size: 0.7rem;
   }
 }

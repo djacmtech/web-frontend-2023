@@ -51,7 +51,7 @@ body {
   display: grid;
   position: relative;
   overflow: auto;
-  gap: 10em;
+  gap: 10rem;
   max-height: calc(100dvh - var(--page-offset));
 }
 
@@ -107,7 +107,7 @@ body {
   .page {
     --page-offset: calc(7em / 1.5);
     /* scroll-snap-type: y mandatory; */
-    gap: 10rem;
+    gap: 5rem;
   }
 
   .page section {

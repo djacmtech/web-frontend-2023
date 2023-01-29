@@ -6,7 +6,7 @@ const Faculty = () => {
   return (
     <div className='faculty'>
       {Faculty.map(x => (
-        <FacultyMember img={x.pic} name={x.name} position={x.post} />
+        <FacultyMember img={x.pic} name={x.name} position={x.post} key={x.name} />
       ))}
     </div>
   );
