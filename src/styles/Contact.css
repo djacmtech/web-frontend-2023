@@ -10,9 +10,12 @@
   background: #191919;
   color: #fff;
   font-size: 1.1rem;
+  transition: all 0.3s linear;
+  background: #191919;
   font-family: 'Jost', sans-serif;
   margin-bottom: 0.7rem;
   border-radius: 10px;
+  border-radius: 10px
 }
 
 .design2 {
@@ -58,7 +61,7 @@
 }
 
 .design5 {
-  width: 80%;
+  width: 100%;
   cursor: pointer;
   background: #171717;
   color: white;
@@ -126,3 +129,33 @@
   text-decoration: none;
   text-align: center;
 }
+
+@media screen and (max-width:1000px) {
+  
+
+.soc{
+  display: none;
+}
+.outer-table{
+  flex-direction: column;
+}
+.container{
+  padding-left: 170px;
+}
+.design1 input,.design2{
+ width: 210px;
+}
+
+.design4 textarea{
+  height: 205px;
+  width: 210px;
+}
+.inner-table{
+  padding-left: 30px;
+}
+.design5{
+  width: 210px;
+  height: 40px;
+}
+}
+
