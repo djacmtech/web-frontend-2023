@@ -1,21 +1,21 @@
 .main-header {
-  font-size: clamp(1rem, 7dvh, 5rem);
+  font-size: clamp(1rem, 10dvh, 7rem);
   display: grid;
   gap: 0.5em;
-  padding: 2em 0 0 2em;
+  padding: 1em 0 0 1em;
   text-shadow: rgb(0 0 0 / 0.5) 0 -0.1em 0.2em;
   transition: all 200ms ease;
   height: max-content;
 }
 
 .main-heading {
-  font-size: 1.5em;
-  width: 15ch;
+  font-size: 1em;
+  max-width: 15ch;
 }
 
 .sub-heading {
-  font-size: 0.75em;
-  width: 35ch;
+  font-size: 0.5em;
+  max-width: 33ch;
 }
 
 @media (width < 1000px) {
@@ -33,7 +33,7 @@
 
 @media (width < 640px) {
   .main-header {
-    font-size: clamp(2rem, 3.2dvh, 3rem);
+    font-size: clamp(2rem, 5dvh, 3rem);
     padding: 2em 1em 0;
   }
 }

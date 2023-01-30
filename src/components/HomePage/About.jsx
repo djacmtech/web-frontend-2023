@@ -19,9 +19,6 @@ const About = () => {
 
   useEffect(() => {
     const BlockPairs = document.querySelectorAll(".block-pair");
-    const Blocks = document.querySelector(".blocks");
-    const Page = document.querySelector(".page");
-    const AboutSection = document.querySelector(".about");
 
     const mobile = window.matchMedia("(width < 900px)");
 
@@ -61,34 +58,6 @@ const About = () => {
         { ...options }
       );
     });
-    // } else {
-    //   const delay = +window.getComputedStyle(Blocks).getPropertyValue("--delay-factor");
-
-    //   BlockPairs.forEach((pair, i) => {
-    //     pair.childNodes.forEach(x => {
-    //       x.style.setProperty("transition-delay", delay * (i + 1) + "ms");
-    //     });
-    //   });
-
-    //   const observer = new IntersectionObserver(
-    //     entries => {
-    //       entries.forEach(entry => {
-    //         if (entry.isIntersecting) {
-    //           entry.target.lastChild.classList.add("open");
-    //         } else {
-    //           entry.target.lastChild.classList.remove("open");
-    //         }
-    //       });
-    //     },
-    //     { root: Page, threshold: 0.5 }
-    //   );
-
-    //   observer.observe(AboutSection);
-
-    //   return () => {
-    //     observer.disconnect();
-    //   };
-    // }
   }, []);
 
   return (

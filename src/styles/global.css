@@ -85,7 +85,7 @@ body {
 
 .heading {
   font-family: "Julius Sans One", sans-serif;
-
+  font-size: clamp(1rem, 10dvh, 7rem);
   font-weight: 900;
   line-height: 1.2;
 

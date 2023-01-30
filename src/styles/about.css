@@ -11,14 +11,10 @@
   text-align: center;
 
   position: absolute;
-  inset: 0 auto 0 0;
+  inset: 0 auto 0 auto;
   margin: auto 0;
 
-  transform-origin: center;
-  rotate: 90deg;
-  translate: -35% 0;
-
-  max-height: fit-content;
+  writing-mode: vertical-lr;
 }
 
 .blocks {
@@ -116,8 +112,7 @@
 
   .about-header {
     position: initial;
-    rotate: 0deg;
-    translate: 0 0;
+    writing-mode: initial;
 
     font-size: 4rem;
   }
@@ -143,6 +138,7 @@
 
   .block-pair {
     grid-auto-flow: row;
+    overflow: hidden;
   }
 
   .block-title {
@@ -151,6 +147,8 @@
     /* translate: 0 0; */
 
     grid-column: 1;
+
+    padding: 0.5em 0;
   }
 
   .block-text {
