@@ -57,6 +57,6 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 0 1em;
-    font-size: clamp(1rem, 1vh, 2rem);
+    font-size: 1rem;
   }
 }

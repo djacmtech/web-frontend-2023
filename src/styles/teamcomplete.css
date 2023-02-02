@@ -83,7 +83,17 @@
 }
 
 @media (width < 500px) {
+  .team-complete {
+    gap: 2em;
+  }
+
+  .team-complete .team-header {
+    font-size: clamp(3rem, 10dvh, 5rem);
+  }
+
   .team-members {
     grid-template-columns: repeat(1, 1fr);
+    gap: 3em;
+    padding-bottom: 5rem;
   }
 }
