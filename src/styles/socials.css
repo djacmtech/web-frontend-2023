@@ -1,5 +1,5 @@
 .socials {
-  font-size: clamp(0.75rem, 0.75vw, 1rem);
+  font-size: clamp(0.75rem, 1vw, 1rem);
 
   background-color: var(--white);
   display: grid;

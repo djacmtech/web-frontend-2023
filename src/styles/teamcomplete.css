@@ -1,46 +1,89 @@
 .team-complete {
   display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: auto 1fr;
-  /* place-items: center; */
+  grid-template-rows: auto auto 1fr;
+  gap: 4em;
+  margin-left: 4rem;
 }
 
-.team-select {
-  grid-column: 2;
-
-  display: grid;
-  gap: 0.5em;
-
-  border: 2px solid var(--accent);
-  border-radius: 2rem;
-
-  margin: 3em 0 0;
-
-  padding: 0 2em 1em;
-  height: min-content;
-
-  align-self: start;
+.team-complete .team-header {
+  max-width: fit-content;
   justify-self: center;
+  margin: 0.25em auto 0;
 }
 
-.team-label {
-  font-size: 2rem;
-  font-weight: 500;
+.team-members {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 4em 0;
+  place-items: center;
 }
 
-.team-select input {
-  display: none;
+.team-member {
+  display: grid;
+  place-items: center;
+  text-align: center;
+
+  width: max-content;
+
+  font-size: 1.25rem;
+
+  grid-column: span 2;
 }
 
-.team-select label {
-  font-size: 2rem;
-  opacity: 0.5;
-  transition: all 250ms ease;
-  cursor: pointer;
+.team-member:is(:first-child, :last-child) {
+  grid-column: 1 / -1;
 }
 
-.team-select:not(:has(input:checked)) .team-input:first-of-type label,
-.team-input:has(input:checked) label {
-  opacity: 1;
-  color: var(--accent);
+.team-member:nth-child(2),
+.team-member:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+.team-member:nth-child(3),
+.team-member:nth-child(5) {
+  grid-column: 4 / span 2;
+}
+
+.member-img {
+  height: clamp(12rem, 15vw, 15rem);
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 50%;
+}
+
+.member-name {
+  font-size: 1em;
+}
+
+.member-position {
+  margin-top: 0.5em;
+  font-size: 0.75em;
+}
+
+@media (width < 900px) {
+  .team-complete {
+    margin: 0;
+  }
+
+  .team-members {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .team-member {
+    grid-column: span 1;
+  }
+
+  .team-member:is(:first-child) {
+    grid-column: 1 / -1;
+  }
+
+  .team-member:is(:nth-child(2), :nth-child(4), :nth-child(3), :nth-child(5), :last-child) {
+    grid-column: span 1;
+  }
+}
+
+@media (width < 500px) {
+  .team-members {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }

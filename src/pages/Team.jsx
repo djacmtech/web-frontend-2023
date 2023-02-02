@@ -6,8 +6,8 @@ import TeamComplete from "../components/TeamPage/TeamComplete";
 const Team = () => {
   return (
     <div className='teampage page'>
-      <TeamCarousel />
-      {/* <TeamComplete /> */}
+      {/* <TeamCarousel /> */}
+      <TeamComplete />
     </div>
   );
 };

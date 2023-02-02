@@ -4,7 +4,7 @@
 }
 
 .contact-header {
-  margin: 0.5em auto 0.5em 0.8em;
+  margin: 0.25em 0 0.25em 4rem;
 }
 
 .contact-form {
@@ -23,7 +23,7 @@
 
   place-items: center auto;
 
-  margin: 0 2em 2em;
+  margin: 0 2em 1em;
 }
 
 .message-field {
@@ -69,13 +69,13 @@
   place-items: center;
   background-color: var(--dark-grey);
   border-radius: 1rem;
-  padding: 1em;
+  padding: 0.5em;
 }
 
 .contact-socials img {
   object-fit: contain;
-  max-height: 3em;
-  max-width: 3em;
+  max-height: 2em;
+  max-width: 2em;
 }
 
 .send-btn {

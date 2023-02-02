@@ -7,7 +7,7 @@
 @import "events.css" layer(events);
 @import "teamcarousel.css" layer(team);
 @import "teamcomplete.css" layer(team);
-@import "teammembers.css" layer(team);
+/* @import "teammembers.css" layer(team); */
 @import "faculty.css" layer(team);
 @import "debug.css" layer(debug);
 

@@ -5,7 +5,7 @@
   gap: 2rem;
 }
 
-.team-header {
+.team-carousel .team-header {
   font-size: clamp(3rem, 10dvh, 5rem);
   text-align: center;
   max-width: fit-content;

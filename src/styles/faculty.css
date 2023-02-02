@@ -1,9 +1,16 @@
 .faculty {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-area: 2 / 2;
   gap: 1em;
   height: min-content;
+}
+
+.team-carousel .faculty {
+  grid-area: 2 / 2;
+}
+
+.team-complete .faculty-img {
+  height: clamp(12rem, 15vw, 15rem);
 }
 
 .faculty-member {
@@ -16,8 +23,9 @@
 
 .faculty-img {
   height: 8em;
-  object-fit: contain;
-  border-radius: 100vw;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .faculty-name {
@@ -37,15 +45,22 @@
 }
 
 @media (width < 640px) {
-  .faculty-member {
+  .team-carousel .faculty-member {
     font-size: 0.75rem;
   }
 
-  .faculty-name {
+  .team-carousel .faculty-name {
     width: 12ch;
   }
 
-  .faculty-img {
+  .team-carousel .faculty-img {
     height: 10em;
+  }
+}
+
+@media (width < 500px) {
+  .team-complete .faculty {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 4em;
   }
 }

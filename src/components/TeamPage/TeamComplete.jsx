@@ -1,33 +1,32 @@
-import { useState } from "react";
-import TeamMembers from "./TeamMembers";
+import useData from "../../hooks/useData";
+import Faculty from "./Faculty";
 
 const TeamComplete = () => {
-  const [Team, setTeam] = useState("2022");
-
-  const changeHandler = e => {
-    setTeam(e.target.value);
-  };
+  const Team = useData("https://djacmdev.pythonanywhere.com/api/core_committee/");
 
   return (
     <section className='team-complete'>
-      <fieldset className='team-select'>
-        <legend className='team-label'>Team</legend>
-        {new Array(5).fill(0).map((_, i) => (
-          <span key={i} className='team-input'>
-            <input
-              type='radio'
-              name='team'
-              id={`team-${22 - i}-${23 - i}`}
-              value={2022 - i}
-              onChange={changeHandler}
-            />
-            <label htmlFor={`team-${22 - i}-${23 - i}`}>{`${2022 - i}-${2023 - i}`}</label>
-          </span>
-        ))}
-      </fieldset>
+      <h1 className='team-header heading'>Team</h1>
 
-      <TeamMembers Year={Team} />
+      <Faculty />
+
+      <div className='team-members'>
+        {Team.map(x => (
+          <TeamMember name={x.name} position={x.post} img={x.pic} key={x.name} />
+        ))}
+      </div>
     </section>
+  );
+};
+
+const TeamMember = ({ name, position, img, linkedin, i }) => {
+  return (
+    <div className='team-member'>
+      <img src={img} alt={name + " image"} className='member-img' />
+      <div className='divider'></div>
+      <h2 className='member-name'>{name}</h2>
+      <h3 className='member-position'>{position}</h3>
+    </div>
   );
 };
 
