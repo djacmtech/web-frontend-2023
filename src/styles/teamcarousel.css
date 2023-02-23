@@ -20,7 +20,7 @@
   overflow: auto hidden;
 }
 
-.carousel {
+.team-carousel .carousel {
   --rotation: 25deg;
 
   rotate: var(--rotation);
@@ -96,7 +96,7 @@
     grid-row: 3;
   }
 
-  .carousel {
+  .team-carousel .carousel {
     --rotation: 25deg;
     translate: 0 8rem;
   }
