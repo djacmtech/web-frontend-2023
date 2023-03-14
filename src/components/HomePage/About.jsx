@@ -5,15 +5,27 @@ const About = () => {
   const cards = [
     {
       title: "Our Mission",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae vel necessitatibus deserunt dolor nulla soluta dignissimos iure enim cupiditate officia esse tempora veritatis, obcaecati in dolorum laboriosam eveniet recusandae quae!",
+      text: [
+        "Foster research acumen and analytical thinking in students to prepare them for technological challenges in the computing industry.",
+        "Cultivate professionals who possess soft skills, ethical values, and a commitment to society's betterment.",
+        "Raise awareness about sustainability issues and current developments in the computing field.",
+        "Create a collaborative environment that supports aspiring technocrats in meeting industry demands.",
+      ],
     },
     {
       title: "Our Vision",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae vel necessitatibus deserunt dolor nulla soluta dignissimos iure enim cupiditate officia esse tempora veritatis, obcaecati in dolorum laboriosam eveniet recusandae quae!",
+      text: [
+        "The goal is to provide excellent education, encourage a culture of research, and instill ethical values in order to produce skilled engineers who can effectively address worldwide challenges.",
+      ],
     },
     {
       title: "What We Do",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae vel necessitatibus deserunt dolor nulla soluta dignissimos iure enim cupiditate officia esse tempora veritatis, obcaecati in dolorum laboriosam eveniet recusandae quae!",
+      text: [
+        "Stay up-to-date with the latest technology trends by reading our magazine and newsletter. Our members benefit from informative guest lectures that expand their knowledge.",
+        "Our members benefit from informative guest lectures that expand their knowledge.",
+        "Nothing beats hands-on learning experiences.",
+        "We provide a full-day opportunity to experience the real world of industry.",
+      ],
     },
   ];
 
@@ -66,7 +78,11 @@ const About = () => {
       <div className='blocks'>
         {cards.map(x => (
           <div className='block-pair' key={x.title} aria-label={x.title}>
-            <div className='block-text block'>{x.text}</div>
+            <ul className='block-text block'>
+              {x.text.map(x => (
+                <span>{x}</span>
+              ))}
+            </ul>
             <div className='block-title block'>{x.title}</div>
           </div>
         ))}

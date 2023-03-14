@@ -23,6 +23,8 @@
   display: grid;
   gap: 1em;
 
+  /* grid-auto-rows: 1fr; */
+
   padding: 1em 0;
   margin: 0 5vw 0 16vw;
 
@@ -70,9 +72,23 @@
   background-color: var(--dark-grey);
   color: var(--accent);
   font-size: var(--text-size);
-  padding: 1.5em;
+  padding: 2em 1.5em;
+
+  display: grid;
+  gap: 0.25em;
+
+  /* text-align: justify; */
 
   translate: calc(50% * (1 - var(--open-progress))) 0;
+}
+
+.block-text li {
+  padding: 0 0.5em;
+}
+
+.block-text li::marker {
+  content: "⇒";
+  font-weight: bold;
 }
 
 .block-text::after {
