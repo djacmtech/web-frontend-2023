@@ -1,6 +1,6 @@
 import React from "react";
 // import Event from "../components/EventPage/Event";
-import Carousel from "react-material-ui-carousel";
+import Carousel from "../utils/Carousel";
 
 const Events = () => {
   const images = [
@@ -32,7 +32,7 @@ const Events = () => {
     // "1nHWmr77alFk2hVGFEkPD9UUwEztejSB9",
 
     //Digihunt 3.0
-    "16WtWKcuw2NB5h6M5tUn_oMiDK5Y6BKuo",
+    "1J8SZtDrWGoEZYzBYmLtVgCsdbIH4QAmT",
     // "1XAiGb8PXLwuzASAi8s1GCoh2Wg-_cdWt",
     // "1bAtgnhP5pH9Eh7j_VC-GnfGA26ml1pQR",
     "11Fu3uDwXf4thz_jiJKuqpL3p-ME21V0k",
@@ -60,7 +60,17 @@ const Events = () => {
           <li>Hour of Code</li>
         </ul>
 
-        <Carousel
+        <Carousel className='events-carousel'>
+          {images.map(image => (
+            <img
+              src={`https://drive.google.com/uc?export=download&id=${image}`}
+              key={image}
+              className='events-carousel-img'
+              alt='Event Image'
+            />
+          ))}
+        </Carousel>
+        {/* <Carousel
           className='events-carousel'
           indicatorContainerProps={{ className: "carousel-indicators" }}
           navButtonsWrapperProps={{ className: "carousel-nav-btn" }}>
@@ -74,7 +84,7 @@ const Events = () => {
               />
             </div>
           ))}
-        </Carousel>
+        </Carousel> */}
       </section>
     </div>
   );

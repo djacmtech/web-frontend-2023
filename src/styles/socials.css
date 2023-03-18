@@ -7,7 +7,7 @@
   place-items: center;
   gap: 0.5em;
 
-  height: max-content;
+  max-height: fit-content;
 
   position: fixed;
   inset: 0 0.75em 0 auto;

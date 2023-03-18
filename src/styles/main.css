@@ -1,14 +1,15 @@
 @import "global.css" layer(base);
 @import "navbar.css" layer(layout);
 @import "socials.css" layer(layout);
+@import "carousel.css" layer(utils);
 @import "header.css" layer(home);
 @import "about.css" layer(home);
 @import "contact.css" layer(home);
 @import "events.css" layer(events);
-@import "teamcarousel.css" layer(team);
+/* @import "teamcarousel.css" layer(team); */
 @import "teamcomplete.css" layer(team);
 /* @import "teammembers.css" layer(team); */
 @import "faculty.css" layer(team);
 @import "debug.css" layer(debug);
 
-@layer base, layout, home, events, team, debug;
+@layer base, layout, utils, home, events, team, debug;

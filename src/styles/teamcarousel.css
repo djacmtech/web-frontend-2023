@@ -49,7 +49,7 @@
   --to-offset: -25%;
 }
 
-.carousel-item {
+.teamcarousel-item {
   height: 12rem;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
