@@ -1,0 +1,162 @@
+.home-gallery {
+  display: grid;
+  grid-template-columns: auto 1fr 1fr;
+  grid-template-rows: 1fr 0.8fr;
+  gap: 2rem;
+  padding: 0 2rem;
+  height: 80vh;
+  position: relative;
+  scroll-margin: 2rem;
+}
+
+.gallery-open {
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  gap: 1rem;
+}
+
+.gallery-carousel {
+  width: 40vw;
+  grid-row: 1 / -1;
+  border-radius: 2.5rem;
+
+  /* height: 100%; */
+
+  border-width: 0.5rem;
+  transition: all 500ms ease;
+}
+
+.gallery-open .gallery-carousel {
+  width: 100%;
+}
+
+.gallery-carousel::after {
+  content: "Gallery";
+  position: absolute;
+  inset: 0;
+  background-color: rgb(0 0 0 / 0.75);
+  color: #d08080;
+  font-size: 2.5rem;
+
+  display: flex;
+  flex-direction: column-reverse;
+
+  padding: 3rem;
+  transition: opacity 500ms ease;
+}
+
+.gallery-open .gallery-carousel::after {
+  opacity: 0;
+  inset: auto;
+}
+
+.gallery-btn {
+  border-radius: 2.5rem;
+
+  padding: 2rem;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+
+  font-size: 2.75rem;
+  font-weight: bold;
+
+  text-align: center;
+  text-decoration: none;
+
+  transition: all 500ms ease;
+
+  cursor: pointer;
+}
+
+.gallery-open .gallery-btn {
+  display: none;
+}
+
+.gallery-btn:hover {
+  outline: 4px solid currentColor;
+}
+
+.gallery-btn svg {
+  place-self: end;
+}
+
+.gallery-btn span {
+  grid-row: -1;
+}
+
+.about-btn {
+  background-color: #2d2d2d;
+  color: #82adff;
+}
+.events-btn {
+  background-color: #fff7ac;
+  color: #8b7c2a;
+}
+
+.contact-btn {
+  grid-column: 2 / span 2;
+  background-color: #a9f1df;
+  color: #003471;
+}
+
+.gallery-open-btn,
+.grid-open-btn {
+  width: 3rem;
+  aspect-ratio: 1 / 1;
+  display: grid;
+  place-items: center;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  place-self: end;
+  position: absolute;
+  border: none;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.back-btn {
+  inset: auto 4rem 2rem auto;
+}
+
+.grid-btn {
+  inset: auto 8rem 2rem auto;
+  transition: opacity 200ms ease;
+}
+
+.gallery-open .gallery-open-btn {
+  opacity: 1;
+}
+
+.gallery {
+  position: relative;
+  display: grid;
+  padding: 2rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(25vw, 1fr));
+  gap: 2rem;
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.gallery-grid > img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: 2.5rem;
+  border: 2px solid #fff;
+}
+
+.gallery .back-btn {
+  opacity: 1;
+  position: sticky;
+  margin-bottom: 2rem;
+  inset: auto 8rem 2rem auto;
+  grid-row: 1;
+  grid-column: 1;
+
+  width: 4rem;
+}

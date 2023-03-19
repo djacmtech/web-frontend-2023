@@ -73,7 +73,7 @@ const About = () => {
   }, []);
 
   return (
-    <section className='about'>
+    <section className='about' id='aboutus'>
       <h1 className='about-header'>About Us</h1>
       <div className='blocks'>
         {cards.map(x => (

@@ -3,6 +3,7 @@
 @import "socials.css" layer(layout);
 @import "carousel.css" layer(utils);
 @import "header.css" layer(home);
+@import "gallery.css" layer(home);
 @import "about.css" layer(home);
 @import "contact.css" layer(home);
 @import "events.css" layer(events);

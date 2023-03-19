@@ -71,7 +71,7 @@
   --offset: 1.5rem;
 }
 
-.carousel:hover .nav-btn {
+.carousel:not(.nohover):hover .nav-btn {
   opacity: 1;
 }
 

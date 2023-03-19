@@ -6,7 +6,7 @@ import direction from "../../assets/icons/direction_icon.svg";
 
 const Contact = () => {
   return (
-    <section className='contact'>
+    <section className='contact' id='contactus'>
       <h1 className='heading contact-header'>GET IN TOUCH</h1>
 
       <form action='#' className='contact-form'>

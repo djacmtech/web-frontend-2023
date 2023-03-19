@@ -46,7 +46,7 @@ body {
 }
 
 .page {
-  --page-offset: 7rem;
+  --page-offset: 5rem;
 
   display: grid;
   position: relative;
@@ -57,13 +57,23 @@ body {
 
 .page section {
   margin: 0 4rem 0 0;
+}
+
+section.header {
   min-block-size: calc(100dvh - var(--page-offset));
 }
 
-::-webkit-scrollbar {
+body::-webkit-scrollbar {
   display: none;
+}
+
+::-webkit-scrollbar {
   width: 0.25rem;
   opacity: 0.5;
+}
+
+::-webkit-scrollbar-track {
+  background: none;
 }
 
 ::-webkit-scrollbar-thumb {

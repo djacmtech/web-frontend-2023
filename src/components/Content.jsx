@@ -1,6 +1,7 @@
 import { Route } from "react-router-dom";
 import SlideRoutes from "react-slide-routes";
 import Events from "../pages/Events";
+import Gallery from "../pages/GalleryGrid";
 import Home from "../pages/Home";
 import Team from "../pages/Team";
 
@@ -10,6 +11,7 @@ const Content = () => {
       <Route path='/' element={<Home />} />
       <Route path='/events' element={<Events />} />
       <Route path='/team' element={<Team />} />
+      <Route path='/gallery' element={<Gallery />} />
     </SlideRoutes>
   );
 };
