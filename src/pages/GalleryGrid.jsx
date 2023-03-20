@@ -47,8 +47,8 @@ const Gallery = () => {
     // "197dIrNTA-WRvaObTOneBuAtDAd9Nzquw",
   ];
 
-  const GalleryGrid = document.querySelector(".gallery-grid");
   useEffect(() => {
+    const GalleryGrid = document.querySelector(".gallery-grid");
     GalleryGrid.childNodes.forEach(x => {
       console.log(x.naturalWidth / x.naturalHeight);
       if (x.naturalWidth / x.naturalHeight < 1) x.style.gridRow = "auto / span 2";

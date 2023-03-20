@@ -51,7 +51,7 @@ body {
   display: grid;
   position: relative;
   overflow: auto;
-  gap: 5rem;
+  gap: 4rem;
   max-height: calc(100dvh - var(--page-offset));
 }
 
@@ -59,7 +59,7 @@ body {
   margin: 0 4rem 0 0;
 }
 
-section.header {
+section:is(.header) {
   min-block-size: calc(100dvh - var(--page-offset));
 }
 
@@ -68,6 +68,7 @@ body::-webkit-scrollbar {
 }
 
 ::-webkit-scrollbar {
+  /* display: none; */
   width: 0.25rem;
   opacity: 0.5;
 }

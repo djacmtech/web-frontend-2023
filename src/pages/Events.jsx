@@ -58,6 +58,16 @@ const Events = () => {
           <li>Membership Drive</li>
           <li>DigiHunt 3.0</li>
           <li>Hour of Code</li>
+          <li>Internship Fair</li>
+          <li>Placements 101</li>
+          <li>CodeBash 3.0</li>
+          <li>Industrial Visit</li>
+          <li>ACM 101's Roadmap to CP</li>
+          <li>Membership Drive</li>
+          <li>DigiHunt 3.0</li>
+          <li>Hour of Code</li>
+          <li>Internship Fair</li>
+          <li>Placements 101</li>
         </ul>
 
         <Carousel className='events-carousel'>

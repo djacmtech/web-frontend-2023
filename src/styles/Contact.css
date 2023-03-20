@@ -1,6 +1,7 @@
 .contact {
   display: grid;
   grid-template-rows: auto 1fr;
+  font-family: "DM Sans", Helvetica, Arial, sans-serif;
 }
 
 .contact-header {
@@ -12,7 +13,7 @@
   grid-template-areas:
     "name name name message"
     "email email email message"
-    "core-email  socials socials message"
+    "core-email socials socials message"
     "core-phone socials socials send";
 
   grid-auto-rows: 1fr;
@@ -86,20 +87,27 @@
   color: var(--accent);
   font-weight: 700;
 
-  font-size: 1.25em;
+  font-size: 1em;
 }
 
 .name-input,
-.email-input,
-.message-field {
+.email-input {
   padding: 0.5em 1em;
   font-size: 1em;
+  font-family: "DM Sans", Helvetica, Arial, sans-serif;
+}
+
+.message-field {
+  padding: 0.75em 1em;
+  font-size: 1em;
+  font-family: "DM Sans", Helvetica, Arial, sans-serif;
 }
 
 :is(.name-input, .email-input, .message-field)::placeholder {
   color: var(--accent);
   font-weight: 700;
-  opacity: 0.5;
+  /* opacity: 0.5; */
+  font-family: "DM Sans", Helvetica, Arial, sans-serif;
   font-size: 1em;
 }
 

@@ -64,11 +64,7 @@ const Gallery = () => {
 
   return (
     <section className='home-gallery' id='gallery' ref={Gallery}>
-      <Carousel
-        className='gallery-carousel'
-        disablehover={!Open}
-        slideshow={true}
-        onClick={openGallery}>
+      <Carousel className='gallery-carousel' disablehover={!Open} onClick={openGallery}>
         {images.map(image => (
           <img
             src={`https://drive.google.com/uc?export=download&id=${image}`}

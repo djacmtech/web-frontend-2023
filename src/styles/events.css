@@ -2,28 +2,36 @@
   display: grid;
   grid-template-columns: 3fr 2.45fr;
   grid-template-rows: auto 1fr;
-  place-items: center;
+  /* place-items: center; */
+  justify-items: center;
   gap: 1em;
 }
 
 .events-header {
   margin: 0.25em auto 0;
+  grid-column: 2;
 }
 
 .events-list {
   list-style: none;
   font-size: clamp(1rem, 3.5vh, 2rem);
   font-weight: 500;
-  padding: 1.5em;
+  padding: 0 1em;
   user-select: none;
+
+  overflow-y: scroll;
+  max-height: 10lh;
+
+  scroll-margin-block: 0.5em;
 }
 
 .events-carousel {
-  grid-row: 1/-1;
-  margin: 2em;
+  grid-row: 2;
+  margin: 0 2em 2em;
   width: 40vw;
   aspect-ratio: 4/3;
-  border-radius: 2.5rem;
+  border-radius: 3rem;
+  place-self: center;
 }
 
 /* .events-carousel > div:nth-child(1) {

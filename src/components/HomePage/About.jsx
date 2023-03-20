@@ -80,7 +80,7 @@ const About = () => {
           <div className='block-pair' key={x.title} aria-label={x.title}>
             <ul className='block-text block'>
               {x.text.map(x => (
-                <span>{x}</span>
+                <> {x}</>
               ))}
             </ul>
             <div className='block-title block'>{x.title}</div>

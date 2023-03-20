@@ -3,6 +3,7 @@
   grid-template-rows: auto auto 1fr;
   gap: 4em;
   margin-left: 4rem;
+  padding: 2rem;
 }
 
 .team-complete .team-header {
@@ -13,7 +14,7 @@
 
 .team-members {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(12, 1fr);
   gap: 4em 0;
   place-items: center;
 }
@@ -30,17 +31,27 @@
   grid-column: span 2;
 }
 
-.team-member:is(:first-child, :last-child) {
-  grid-column: 1 / -1;
+.team-member {
+  grid-column: span 4;
 }
 
-.team-member:nth-child(2),
-.team-member:nth-child(4) {
-  grid-column: 2 / span 2;
+.team-member:nth-child(1) {
+  grid-column: 3 / span 4;
 }
-.team-member:nth-child(3),
+.team-member:nth-child(2) {
+  grid-column: 7 / span 4;
+}
+.team-member:nth-child(3) {
+  grid-column: 1 / span 3;
+}
+.team-member:nth-child(4) {
+  grid-column: 4 / span 3;
+}
 .team-member:nth-child(5) {
-  grid-column: 4 / span 2;
+  grid-column: 7 / span 3;
+}
+.team-member:nth-child(6) {
+  grid-column: 10 / span 3;
 }
 
 .member-img {

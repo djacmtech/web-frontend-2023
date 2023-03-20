@@ -10,8 +10,8 @@ const Contact = () => {
       <h1 className='heading contact-header'>GET IN TOUCH</h1>
 
       <form action='#' className='contact-form'>
-        <input type='text' placeholder='Name' className='name-input' />
-        <input type='email' placeholder='Email' className='email-input' />
+        <input type='text' placeholder='name' className='name-input' />
+        <input type='email' placeholder='email' className='email-input' />
 
         <a href='mailto:coreacm@gmail.com' className='cp-email'>
           coreacm@gmail.com
@@ -36,8 +36,8 @@ const Contact = () => {
           <img src={direction} alt='direction' />
         </a>
 
-        <textarea type='text' placeholder='Message' className='message-field' />
-        <input type='button' value='Send' className='send-btn' />
+        <textarea type='text' placeholder='message' className='message-field' />
+        <input type='button' value='send' className='send-btn' />
       </form>
     </section>
   );
