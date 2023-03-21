@@ -7,7 +7,7 @@
 .about-header {
   color: var(--accent);
   line-height: 1.5;
-  font-size: 8rem;
+  font-size: clamp(6rem, 10vw, 8rem);
   text-align: center;
 
   position: absolute;
@@ -26,9 +26,9 @@
   /* grid-auto-rows: 1fr; */
 
   padding: 1em 0;
-  margin: 0 5vw 0 16vw;
+  margin: 0 5vw 0 12vw;
 
-  --block-border-radius: 3rem;
+  --block-border-radius: 2rem;
   --title-size: 2em;
   --text-size: 1.5em;
 

@@ -51,8 +51,14 @@ body {
   display: grid;
   position: relative;
   overflow: auto;
-  gap: 4rem;
+  gap: 5rem;
   max-height: calc(100dvh - var(--page-offset));
+
+  scrollbar-color: var(--accent) transparent;
+}
+
+.homepage {
+  padding-bottom: 5rem;
 }
 
 .page section {
@@ -70,11 +76,6 @@ body::-webkit-scrollbar {
 ::-webkit-scrollbar {
   /* display: none; */
   width: 0.25rem;
-  opacity: 0.5;
-}
-
-::-webkit-scrollbar-track {
-  background: none;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -119,7 +120,15 @@ body::-webkit-scrollbar {
     --page-offset: calc(7em / 1.5);
   }
 
+  .homepage {
+    padding-bottom: 3rem;
+  }
+
   .page section {
     margin: 0;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
   }
 }

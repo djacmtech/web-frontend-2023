@@ -31,6 +31,12 @@ const Gallery = () => {
     // "1soXnydKN-pBk2cuaKK2BkPEmly-6vrBJ",
     // "1nHWmr77alFk2hVGFEkPD9UUwEztejSB9",
 
+    //ACM 101's roadmap to CP
+    // "1QF6vuRf4striA9X8iLQaiFMRvq7BtuQ2",
+    "13Kfo3oxm2Oo3FoLoy-z9Y_BzUfWcCu4x",
+    // "1r1lRCoqfzxTTrf6hMRS9WZeaMsO5vNX0",
+    // "197dIrNTA-WRvaObTOneBuAtDAd9Nzquw",
+
     //Digihunt 3.0
     "1J8SZtDrWGoEZYzBYmLtVgCsdbIH4QAmT",
     // "1XAiGb8PXLwuzASAi8s1GCoh2Wg-_cdWt",
@@ -39,12 +45,6 @@ const Gallery = () => {
     "16WtWKcuw2NB5h6M5tUn_oMiDK5Y6BKuo",
 
     //Codebash 3.0
-
-    //ACM 101's roadmap to CP
-    "1QF6vuRf4striA9X8iLQaiFMRvq7BtuQ2",
-    "13Kfo3oxm2Oo3FoLoy-z9Y_BzUfWcCu4x",
-    // "1r1lRCoqfzxTTrf6hMRS9WZeaMsO5vNX0",
-    // "197dIrNTA-WRvaObTOneBuAtDAd9Nzquw",
   ];
 
   useEffect(() => {

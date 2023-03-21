@@ -1,11 +1,23 @@
 .contact {
   display: grid;
   grid-template-rows: auto 1fr;
-  font-family: "DM Sans", Helvetica, Arial, sans-serif;
+  position: relative;
+
+  --border-radius: 2rem;
 }
 
 .contact-header {
-  margin: 0.25em 0 0.25em 4rem;
+  margin: 0.25em 0 0 1em;
+  color: var(--accent);
+  line-height: 1.5;
+  font-size: clamp(6rem, 10vw, 7rem);
+  text-align: center;
+
+  position: absolute;
+  inset: 0 auto 0 auto;
+  margin: auto 0;
+
+  writing-mode: vertical-lr;
 }
 
 .contact-form {
@@ -20,24 +32,30 @@
   grid-template-columns: 2.5fr 1fr 1fr 3fr;
   gap: 0.5em;
 
-  font-size: 2rem;
+  font-size: 2.5rem;
 
   place-items: center auto;
 
-  margin: 0 2em 1em;
+  margin: 3rem 5vw 3rem 12vw;
 }
 
 .message-field {
   grid-area: message;
   resize: none;
+  padding: 0.75em 1em;
+  font-size: 1em;
 }
 
 .name-input {
   grid-area: name;
+  padding: 0.5em 1em;
+  font-size: 1em;
 }
 
 .email-input {
   grid-area: email;
+  padding: 0.5em 1em;
+  font-size: 1em;
 }
 
 .cp-email {
@@ -50,12 +68,14 @@
 
 .contact-form > * {
   background-color: var(--dark-grey);
-  border-radius: 1rem;
+  border-radius: var(--border-radius);
   border: none;
+  transition: all 200ms ease;
 }
 
-.contact-form > *:not(:is(input, textarea)):hover {
-  background-color: var(--light-grey);
+.contact-form > :is(.cp-email, .cp-phone, .send-btn):hover {
+  /* background-color: var(--light-grey); */
+  scale: 0.95;
 }
 
 .cp-email,
@@ -66,20 +86,19 @@
   text-decoration: none;
   font-weight: 700;
 
-  padding: 0 1em;
+  padding: 0.5em 1em;
 }
 
 .contact-socials {
   display: grid;
   place-items: center;
-  border-radius: 1rem;
-  padding: 0.5em;
+  border-radius: var(--border-radius);
+  padding: 0.75em;
+  aspect-ratio: 1 / 1;
 }
 
-.contact-socials img {
-  object-fit: contain;
-  max-height: 3em;
-  max-width: 3em;
+.contact-socials:hover {
+  scale: 0.9;
 }
 
 .send-btn {
@@ -88,34 +107,50 @@
   font-weight: 700;
 
   font-size: 1em;
+
+  display: grid;
+
+  grid-template-rows: auto 1fr auto;
+  text-align: center;
+
+  padding: 0.25em 0.5em;
 }
 
-.name-input,
-.email-input {
-  padding: 0.5em 1em;
-  font-size: 1em;
-  font-family: "DM Sans", Helvetica, Arial, sans-serif;
+.send-btn svg {
+  width: 1.5em;
+  place-self: end;
 }
 
-.message-field {
-  padding: 0.75em 1em;
-  font-size: 1em;
-  font-family: "DM Sans", Helvetica, Arial, sans-serif;
+.send-btn span {
+  grid-row: 3;
+}
+
+:is(.name-input, .email-input, .message-field):focus-visible {
+  outline: var(--accent) auto 1px;
 }
 
 :is(.name-input, .email-input, .message-field)::placeholder {
   color: var(--accent);
   font-weight: 700;
-  /* opacity: 0.5; */
+  opacity: 0.75;
   font-family: "DM Sans", Helvetica, Arial, sans-serif;
   font-size: 1em;
 }
 
 @media (width < 900px) {
+  .contact {
+    --border-radius: 1rem;
+  }
+
   .contact-header {
-    font-size: clamp(1rem, 7dvh, 3rem);
+    /* font-size: clamp(1rem, 7dvh, 3rem);
     justify-self: center;
-    margin: 0.5em auto 0;
+    margin: 0.5em auto 0; */
+
+    position: initial;
+    writing-mode: initial;
+
+    font-size: 4rem;
   }
 
   .contact-form {
@@ -137,7 +172,7 @@
   .contact-socials.location {
     padding: 0.25em 1em;
   }
-  .contact-socials.location img {
+  .contact-socials.location svg {
     object-fit: contain;
     width: 2em;
   }
