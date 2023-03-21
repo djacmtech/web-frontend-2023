@@ -109,6 +109,6 @@
   }
 
   .team-member:nth-child(3) {
-    grid-column: autos / span 1;
+    grid-column: auto / span 1;
   }
 }
