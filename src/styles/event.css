@@ -54,3 +54,10 @@
 .event-date-double {
   font-size: 2rem;
 }
+
+@media (width < 900px) {
+  .event {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+}
