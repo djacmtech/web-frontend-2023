@@ -1,0 +1,56 @@
+.event {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  place-items: center;
+
+  padding: 2rem;
+  gap: 2rem;
+
+  margin: 0 auto;
+}
+
+.event-carousel {
+  width: 50vw;
+
+  aspect-ratio: 4 / 3;
+
+  border-radius: 2rem;
+}
+
+.event-text {
+  display: grid;
+  margin: 0 15em 0 0;
+}
+
+.event-name {
+  font-family: "Julius Sans One", sans-serif;
+
+  font-size: clamp(1rem, 6dvh, 7rem);
+  font-weight: 900;
+  line-height: 1.2;
+
+  color: transparent;
+  text-transform: uppercase;
+
+  background-image: url("../assets/bg.gif");
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.event-date {
+  font-size: 2.5rem;
+  margin: 0.5em;
+  width: 7ch;
+}
+
+.event-content {
+  font-size: 1.25rem;
+  text-align: justify;
+}
+
+.event-date-single,
+.event-date-double {
+  font-size: 2rem;
+}

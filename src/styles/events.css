@@ -48,7 +48,12 @@
   transition: all 100ms ease;
 }
 
-.events-list li:hover {
+.events-list li a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+.events-list li:hover a {
   color: var(--accent);
   /* text-shadow: 0 0 1em; */
 }

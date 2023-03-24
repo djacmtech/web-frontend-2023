@@ -21,7 +21,7 @@ const Carousel = ({ children, className, disablehover, ...rest }) => {
   }, []);
 
   useEffect(() => {
-    let offset = Items.current.childNodes[Current].offsetLeft;
+    let offset = Items.current?.childNodes[Current].offsetLeft;
     Items.current.scrollTo(offset, 0);
     return () => {};
   }, [Current]);

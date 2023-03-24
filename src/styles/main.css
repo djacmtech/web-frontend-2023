@@ -8,6 +8,7 @@
 @import "contact.css" layer(home);
 @import "gallery.css" layer(gallery);
 @import "events.css" layer(events);
+@import "event.css" layer(events);
 /* @import "teamcarousel.css" layer(team); */
 @import "teamcomplete.css" layer(team);
 /* @import "teammembers.css" layer(team); */

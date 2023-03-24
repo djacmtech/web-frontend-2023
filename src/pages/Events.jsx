@@ -1,6 +1,8 @@
 import React from "react";
 // import Event from "../components/EventPage/Event";
 import Carousel from "../utils/Carousel";
+import useData from "../hooks/useData";
+import { Link } from "react-router-dom";
 
 const Events = () => {
   const images = [
@@ -46,35 +48,27 @@ const Events = () => {
     // "1r1lRCoqfzxTTrf6hMRS9WZeaMsO5vNX0",
     // "197dIrNTA-WRvaObTOneBuAtDAd9Nzquw",
   ];
+
+  const Events = useData("https://djacmdev.pythonanywhere.com//api/events/");
+
   return (
     <div className='eventspage page'>
       <section className='events'>
         <h1 className='heading events-header'>EVENTS</h1>
 
         <ul className='events-list'>
-          <li>CodeBash 3.0</li>
-          <li>Industrial Visit</li>
-          <li>ACM 101's Roadmap to CP</li>
-          <li>Membership Drive</li>
-          <li>DigiHunt 3.0</li>
-          <li>Hour of Code</li>
-          <li>Internship Fair</li>
-          <li>Placements 101</li>
-          <li>CodeBash 3.0</li>
-          <li>Industrial Visit</li>
-          <li>ACM 101's Roadmap to CP</li>
-          <li>Membership Drive</li>
-          <li>DigiHunt 3.0</li>
-          <li>Hour of Code</li>
-          <li>Internship Fair</li>
-          <li>Placements 101</li>
+          {Events.map(x => (
+            <li key={x.id}>
+              <Link to={`/events/${x.event_key}`}>{x.event_name}</Link>
+            </li>
+          ))}
         </ul>
 
         <Carousel className='events-carousel'>
           {images.map(image => (
             <img
               src={`https://drive.google.com/uc?export=download&id=${image}`}
-              key={image}
+              key={image.toLowerCase()}
               className='events-carousel-img'
               alt='Event Image'
             />

@@ -65,7 +65,7 @@ body {
   margin: 0 4rem 0 0;
 }
 
-section:is(.header) {
+section:is(.header, .event) {
   min-block-size: calc(100dvh - var(--page-offset));
 }
 
@@ -106,13 +106,14 @@ body::-webkit-scrollbar {
 
   display: inline-block;
 
-  background-image:
-   /* linear-gradient(210deg, hsl(0, 60%, 50%) 17.13%, hsla(0, 66%, 64%, 0) 80%),
-    linear-gradient(50deg, hsl(259, 77%, 52%) -16.15%, hsla(259, 77%, 52%, 0) 95%); */ url("../assets/bg.gif");
+  background-image: url("../assets/bg.gif");
   background-blend-mode: multiply;
   background-size: cover;
   background-clip: text;
   -webkit-background-clip: text;
+
+  /* linear-gradient(210deg, hsl(0, 60%, 50%) 17.13%, hsla(0, 66%, 64%, 0) 80%),
+    linear-gradient(50deg, hsl(259, 77%, 52%) -16.15%, hsla(259, 77%, 52%, 0) 95%); */
 }
 
 @media (width < 900px) {
