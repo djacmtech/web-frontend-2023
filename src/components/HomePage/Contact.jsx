@@ -29,7 +29,7 @@ const Contact = () => {
           <Facebook />
         </a>
 
-        <a href='https://www.linkedin.com/dj-sanghvi-acm/' className='contact-socials'>
+        <a href='https://www.linkedin.com/company/dj-sanghvi-acm/' className='contact-socials'>
           <LinkedIn />
         </a>
 

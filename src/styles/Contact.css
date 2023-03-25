@@ -33,6 +33,7 @@
   gap: 0.5em;
 
   font-size: 2.5rem;
+  padding: 2em;
 
   place-items: center auto;
 
@@ -93,7 +94,7 @@
   display: grid;
   place-items: center;
   border-radius: var(--border-radius);
-  padding: 0.75em;
+  padding: 1em;
   aspect-ratio: 1 / 1;
 }
 
@@ -170,10 +171,27 @@
   }
 
   .contact-socials.location {
-    padding: 0.25em 1em;
+    padding: 0.75em 1em;
+    aspect-ratio: auto;
   }
   .contact-socials.location svg {
-    object-fit: contain;
-    width: 2em;
+    width: 1.5em;
+  }
+
+  .send-btn {
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr auto;
+
+    place-items: center;
+  }
+  .send-btn span {
+    grid-row: 1;
+    grid-column: 1;
+  }
+  .send-btn svg {
+    width: 1.5em;
+    grid-row: 1;
+    grid-column: 2;
+    place-self: auto;
   }
 }

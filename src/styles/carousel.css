@@ -21,6 +21,10 @@
   background: rgb(255 255 255 / 0.15);
 }
 
+.carousel-items::-webkit-scrollbar {
+  display: none;
+}
+
 .carousel-item {
   display: grid;
   place-items: center;

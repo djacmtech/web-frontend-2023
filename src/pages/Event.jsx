@@ -18,7 +18,7 @@ const Event = () => {
   }, []);
 
   console.log(event);
-  return (
+  return event.event_name ? (
     <div className={`eventpage page ${eventKey}`}>
       <section className='event'>
         {event.images?.length > 0 ? (
@@ -37,6 +37,8 @@ const Event = () => {
         </div>
       </section>
     </div>
+  ) : (
+    "Loading..."
   );
 };
 export default Event;
