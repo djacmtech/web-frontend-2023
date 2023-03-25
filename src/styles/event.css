@@ -68,9 +68,19 @@
   }
 
   .event-text {
-    margin: 1em 1em;
+    margin: 0;
+    gap: 0.5em;
   }
   .event-name {
-    font-size: clamp(2rem, 5dvh, 4rem);
+    font-size: clamp(2rem, 8dvh, 4rem);
+  }
+  .event-date-single,
+  .event-date-double {
+    font-size: 2rem;
+  }
+
+  .event-content {
+    font-size: 1.5rem;
+    text-align: justify;
   }
 }
