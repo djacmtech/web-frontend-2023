@@ -59,5 +59,18 @@
   .event {
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
+    padding-bottom: 5rem;
+  }
+
+  .event-carousel {
+    width: 90vw;
+    grid-row: 2;
+  }
+
+  .event-text {
+    margin: 1em 1em;
+  }
+  .event-name {
+    font-size: clamp(2rem, 5dvh, 4rem);
   }
 }

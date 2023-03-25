@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import useData from "../hooks/useData";
 import Carousel from "../utils/Carousel";
 
 const Event = () => {
   const { eventKey } = useParams();
-  const [Event, setEvent] = useState({});
+  const [event, setEvent] = useState({});
 
   const getEvent = async () => {
     const url = `https://djacmdev.pythonanywhere.com/api/events/${eventKey}`;
@@ -18,38 +17,42 @@ const Event = () => {
     getEvent();
   }, []);
 
-  console.log(Event);
+  console.log(event);
   return (
     <div className={`eventpage page ${eventKey}`}>
       <section className='event'>
-        {Event.images?.length > 0 ? (
+        {event.images?.length > 0 ? (
           <Carousel className='event-carousel'>
-            {Event.images?.map((x, i) => (
-              <img src={x.image} alt={`${Event.event_name} image`} key={i} className='event-img' />
+            {event.images?.map((x, i) => (
+              <img src={x.image} alt={`${event.event_name} image`} key={i} className='event-img' />
             ))}
           </Carousel>
         ) : (
           ""
         )}
         <div className='event-text'>
-          <h1 className='event-name'>{Event.event_name}</h1>
-          {Event.from_date === Event.to_date ? (
-            <h2 className='event-date-single'>
-              {new Date(Event.from_date).toLocaleDateString("en-uk", { dateStyle: "medium" })}
-            </h2>
-          ) : (
-            <h2 className='event-date-double'>
-              {`${new Date(Event.from_date).toLocaleDateString("en-uk", {
-                dateStyle: "medium",
-              })} - ${new Date(Event.to_date).toLocaleDateString("en-uk", {
-                dateStyle: "medium",
-              })}`}
-            </h2>
-          )}
-          <span className='event-content'>{Event.content}</span>
+          <h1 className='event-name'>{event.event_name}</h1>
+          <EventDate from_date={event.from_date} to_date={event.to_date} />
+          <span className='event-content'>{event.content}</span>
         </div>
       </section>
     </div>
   );
 };
 export default Event;
+
+export const EventDate = ({ from_date, to_date }) => {
+  return from_date === to_date ? (
+    <h2 className='event-date-single'>
+      {new Date(from_date).toLocaleDateString("en-uk", { dateStyle: "medium" })}
+    </h2>
+  ) : (
+    <h2 className='event-date-double'>
+      {`${new Date(from_date).toLocaleDateString("en-uk", {
+        dateStyle: "medium",
+      })} - ${new Date(to_date).toLocaleDateString("en-uk", {
+        dateStyle: "medium",
+      })}`}
+    </h2>
+  );
+};
