@@ -5,6 +5,7 @@ import Event from "../pages/Event";
 import Gallery from "../pages/GalleryGrid";
 import Home from "../pages/Home";
 import Team from "../pages/Team";
+import UpcomingEvent from "./UpcomingEventPage/UpcomingEvent"
 
 const Content = () => {
   return (
@@ -14,6 +15,7 @@ const Content = () => {
       <Route path='/events/:eventKey' element={<Event />} />
       <Route path='/team' element={<Team />} />
       <Route path='/gallery' element={<Gallery />} />
+      <Route path='/upcoming' element={<UpcomingEvent />} />
     </SlideRoutes>
   );
 };

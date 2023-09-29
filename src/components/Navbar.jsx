@@ -7,6 +7,7 @@ const Navbar = () => {
     { to: "/", text: "Home" },
     { to: "/events", text: "Events" },
     { to: "/team", text: "Team" },
+    { to: "/upcoming", text: "Upcoming Events" },
   ];
 
   return (
