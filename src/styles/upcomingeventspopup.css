@@ -1,0 +1,264 @@
+.about {
+    position: relative;
+    display: grid;
+    grid-template-rows: 1fr;
+}
+
+.about-header {
+    color: var(--accent);
+    line-height: 1.5;
+    font-size: clamp(6rem, 10vw, 8rem);
+    text-align: center;
+
+    position: absolute;
+    inset: 0 auto 0 auto;
+    margin: auto 0;
+
+    writing-mode: vertical-lr;
+}
+
+.blocks {
+    font-size: 1rem;
+
+    display: grid;
+    gap: 1em;
+
+    /* grid-auto-rows: 1fr; */
+
+    padding: 1em 0;
+    margin: 0 5vw 0 12vw;
+
+    --block-border-radius: 2rem;
+    --title-size: 2em;
+    --text-size: 1.5em;
+
+    --extension: 0;
+    --delay-factor: 150;
+
+    height: 100%;
+}
+
+.block-pair {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    border-radius: var(--block-border-radius);
+    isolation: isolate;
+
+    --open-progress: 0;
+}
+
+.block {
+    flex: 1 0 0;
+    display: grid;
+    border-radius: inherit;
+    transition: translate 200ms ease-in-out;
+}
+
+.block-title {
+    background-color: var(--accent);
+    color: var(--bg-main);
+    font-size: var(--title-size);
+    font-weight: 900;
+    place-items: center;
+    padding: 0;
+
+    translate: calc(-1 * 50% * (1 - var(--open-progress))) 0;
+
+    z-index: 1;
+}
+
+.block-text {
+    background-color: var(--dark-grey);
+    color: var(--accent);
+    font-size: var(--text-size);
+    padding: 2em 1.5em;
+
+    /* display: grid; */
+    gap: 0.25em;
+
+    /* text-align: justify; */
+
+    translate: calc(50% * (1 - var(--open-progress))) 0;
+}
+
+/* .block-text li {
+  padding: 0 0.5em;
+}
+
+.block-text li::marker {
+  content: "⇒";
+  font-weight: bold;
+} */
+
+.block-text::after {
+    background-color: var(--dark-grey);
+    content: "";
+    width: calc(2 * var(--block-border-radius));
+    position: absolute;
+    inset: 0 calc(-1 * var(--block-border-radius)) 0 auto;
+    opacity: var(--extension);
+    transition: opacity 10ms linear 0ms;
+    z-index: -1;
+}
+
+.blocks.open .block-pair {
+    --open-progress: 1;
+}
+
+.blocks.open .block {
+    transition: all 1000ms ease-in-out;
+}
+
+.blocks.open .block-text::after {
+    transition: opacity 100ms linear 800ms;
+}
+
+@media (width < 1600px) {
+    .blocks {
+        --title-size: 2em;
+        --text-size: 1.2em;
+    }
+}
+
+@media (width < 1000px) {
+    .about {
+        grid-template-rows: auto 1fr;
+    }
+
+    .about-header {
+        position: initial;
+        writing-mode: initial;
+
+        font-size: 4rem;
+    }
+
+    .blocks {
+        --block-border-radius: 1.5rem;
+        margin: 0 3rem;
+
+        --title-size: 2em;
+        --text-size: 1em;
+    }
+}
+
+@media (width < 640px) {
+    .blocks {
+        padding: 1em;
+        margin: 0;
+        gap: 0.5em;
+        --block-border-radius: 0.75rem;
+        --title-size: 1.5em;
+        --text-size: 1em;
+    }
+
+    .block-pair {
+        grid-auto-flow: row;
+        overflow: hidden;
+    }
+
+    .block-title {
+        translate: calc(110% * (1 - var(--open-progress))) 0;
+
+        /* translate: 0 0; */
+
+        grid-column: 1;
+
+        padding: 0.5em 0;
+    }
+
+    .block-text {
+        translate: calc(-1 * 110% * (1 - var(--open-progress))) 0;
+
+        /* translate: 0 0;
+    transform-origin: top;
+    scale: 1 calc(100% * var(--open-progress)); */
+
+        grid-row: 2;
+        padding: 1em;
+    }
+
+    .block-text::after {
+        width: auto;
+        height: calc(2 * var(--block-border-radius));
+        inset: calc(-1 * var(--block-border-radius)) 0 auto 0;
+    }
+
+    .blocks.open .block-text::after {
+        transition: opacity 100ms linear 900ms;
+    }
+}
+
+.event-popup-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 999;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
+}
+
+.event-popup-container.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+.event-popup {
+    background-color: #000;
+    color: #82adff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    animation: pop-up 0.5s ease-in-out forwards;
+}
+
+.event-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.event-name {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.event-button {
+    color: #82adff;
+    background-color: #333333;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+
+@keyframes pop-up {
+    from {
+        transform: scale(0.5);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
