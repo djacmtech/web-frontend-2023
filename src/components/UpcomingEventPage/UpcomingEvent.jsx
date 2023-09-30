@@ -11,7 +11,7 @@ const UpcomingEvent = () => {
                 <p className='p_container'>Can You Save the Conference Before it's too Late?</p>
             </div>
             <div className="up_container">
-                <p className='about'>DJSCE-ACM is here with Digihunt 4.0, a fun & exciting Treasure Hunt with a technical twist for you to get a break from a tiring day and grab some amazing prizes. Trapped in the forest of hints, scrutinize and inspect every move that you make as Death is only a few feet apart in the world of Hunting. <span className='about_extra'>Register now for free in a team of 3 to secure your place for this thrilling mission and get a chance to win some exciting prizes worth Rs.10,000</span></p>
+                <p className='about_events'>DJSCE-ACM is here with Digihunt 4.0, a fun & exciting Treasure Hunt with a technical twist for you to get a break from a tiring day and grab some amazing prizes. Trapped in the forest of hints, scrutinize and inspect every move that you make as Death is only a few feet apart in the world of Hunting. <span className='about_extra'>Register now for free in a team of 3 to secure your place for this thrilling mission and get a chance to win some exciting prizes worth Rs.10,000</span></p>
             </div>
             <div className="down_container">
 
