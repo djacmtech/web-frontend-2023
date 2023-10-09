@@ -1,10 +1,11 @@
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Carousel from "../../utils/Carousel";
-import { ContactIcon, AboutIcon, EventsIcon, BackIcon, GridIcon } from "../GalleryIcons";
+import { ArchivesIcon, TeamIcon, EventsIcon, BackIcon, GridIcon } from "../GalleryIcons";
 
 const Gallery = () => {
   const [Open, setOpen] = useState(false);
+
 
   const images = [
     // Membership Dirve
@@ -51,6 +52,15 @@ const Gallery = () => {
   ];
   const Gallery = useRef(null);
 
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
   const openGallery = () => {
     Gallery.current.classList.add("gallery-open");
     Gallery.current.scrollIntoView();
@@ -75,18 +85,29 @@ const Gallery = () => {
         ))}
       </Carousel>
 
-      <a className='gallery-btn about-btn' href='#aboutus' role='button'>
-        <AboutIcon />
-        <span>About Us</span>
-      </a>
+      <Link className='gallery-btn team-btn' to="/team" role='button'>
+        <TeamIcon />
+        <span>Team</span>
+      </Link>
       <Link className='gallery-btn events-btn' to='/events' role='button'>
         <EventsIcon />
         <span>Events</span>
       </Link>
-      <a className='gallery-btn contact-btn' href='#contactus' role='button'>
-        <ContactIcon />
-        <span>Contact Us</span>
-      </a>
+      <div
+        className={`gallery-btn archive-container ${isHovered ? 'hovered' : ''}`}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        <div className="archive-content">
+          <ArchivesIcon />
+          <span>Archives</span>
+        </div>
+        <div className="archive-overlay">
+          <div className="archive-btn"> <a href="https://drive.google.com/file/d/1QqR0ljFu9SpZDoNHN-V9Sjl11GssVTQ8/view?usp=drive_link" target="_blank">20-21</a></div>
+          <div className="archive-btn"> <a href="https://drive.google.com/file/d/1g7kTL2OkoqjZ0D85K4kE-uGZg3yXC9kL/view?usp=drive_link" target="_blank">21-22</a></div>
+          <div className="archive-btn"> <a href="https://drive.google.com/file/d/1FbgpX2FbokjtdyhE1HzFe0P4b3HiGeLv/view?usp=drive_link" target="_blank">22-23</a></div>
+        </div>
+      </div>
 
       <a className='gallery-open-btn back-btn' onClick={closeGallery} role='button'>
         <BackIcon />
