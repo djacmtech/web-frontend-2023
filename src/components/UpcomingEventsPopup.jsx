@@ -16,9 +16,9 @@ const UpcomingEventsPopup = () => {
           &#x2716;
         </button>
         <div className="event-title">
-          Upcoming Event <span className="celebration-emoji">🎉</span>
+          Current Event <span className="celebration-emoji">🎉</span>
         </div>
-        <div className="event-name">Digi hunt</div>
+        <div className="event-name">Membership Drive</div>
         <button
           className="event-button"
           onClick={() => (window.location.href = "/upcoming")}
