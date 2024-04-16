@@ -1,12 +1,12 @@
 import React from 'react'
 import "../../styles/upcomingEvent.css"
 import { BsFillCalendarMonthFill, BsFillClockFill, BsGeoAltFill } from 'react-icons/bs'
-import MD from './MD'
+import IF from './IF'
 
 const UpcomingEvent = () => {
     return (
         <div>
-            <MD/>
+            <IF/>
             <h1 className='h1_container'>D I G I H U N T <span style={{ marginLeft: "15px" }}>4.0</span></h1>
             <hr style={{ width: "30%", marginLeft: "35vw", backgroundColor: "yellow", marginTop: "10px" }} />
             <div className="main_p_container">

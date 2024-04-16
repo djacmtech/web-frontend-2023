@@ -5,36 +5,13 @@ import { FaChevronRight } from "react-icons/fa";
 const MD = () => {
   return (
     <div>
-      <h1 className='md_head'>Why to Choose ACM Membership? </h1>
+      <h1 className='md_head'>ACM Internship Fair </h1>
       <hr style={{ width: "50vw", marginLeft: "25%" }} />
 
       <div className="perks">
-        <p className="perk">
-          1. Unlock Substantial Savings for skill boosting geeks for geeks courses!
-        </p>
-        <p className="perk">
-          2. Attain top priority at lines of Code 6.0
-        </p>
-        <p className="perk">
-          3. Embrace your Path to Success at our flagship Event Internship Fair.
-        </p>
-        <p className="perk">
-          4. Acquire Three Interviews at no cost.
-        </p>
-        <p className="perk">
-          5. Gain exclusive priority access to Industry visits.
-        </p>
-        <p className="perk">
-          6. Elevate your achievements to the forefront of ACM's estimated annual magazine.
-        </p>
-        <p className="perk">
-          7. Dive into an Exclusive world of Member-Only Events.
-        </p>
-        <p className="perk">
-          8. Join our Official Discord server to connect with Distinguished Alumni.
-        </p>
-        <p className="perk">
-          9. Experience the ACM 101 webinar series - Your Gateway to knowledge
+        <p>
+
+      The highly anticipated Internship Fair is fast approaching, and we're thrilled to extend a warm invitation to all of you. Mark your calendars for May 3rd and 4th as we transform DJSCE into a dynamic hub of opportunity and growth. This event is meticulously curated to offer you a platform to explore a myriad of internship opportunities with esteemed companies. Whether you're a first-year, second-year, or third-year student, this fair is tailored to cater to your aspirations and career needs. Prepare to immerse yourself in a world of learning, networking, and professional advancement. Whether you're seeking remote or on-site internships, the fair has something for everyone. Don't miss out on this chance to take the first step towards realizing your career dreams. Register now and embark on a journey towards a promising future!
         </p>
       </div>
 
